@@ -1,0 +1,212 @@
+H2
+{
+	font-size: 120%;
+	margin: 0 0 5px 0;
+	padding: 0 5px;
+	border-bottom: gray 1px solid;
+}
+
+table, th, td {
+	 font-family : Arial,Helvetica,Times;
+	 font-size : 10pt; 
+	 color : black;
+     border: 1px solid black;
+}
+
+H2 SPAN
+{
+	font-weight: normal;
+	font-size: 90%;
+	display: block;
+}
+
+H3
+{
+	margin-top: 8px;
+	margin-right: 0;
+	margin-left: 4px;
+	margin-bottom: 3px;
+	padding-top: 0;
+	padding-right: 0;
+	padding-left: 5px;
+	padding-bottom: 0;
+	font-size: 100%;
+	border-left: silver 5px solid;
+}
+
+H3 SPAN
+{
+	font-weight: normal;
+	display: block;
+}
+
+H4, H5, H6, H7
+{
+	font-size: 100%;
+	margin: 2px 0;
+	padding: 0;
+}
+
+FORM
+{
+	margin-bottom: -20px;
+	margin-right: auto;
+	margin-left: 0px;
+}
+
+#linksLeft
+{
+	background-image: url('../images/links_left.gif');
+	width: 256px;
+	height: 39px;
+	padding: 0 0 0 0;
+	margin: 0;
+	vertical-align: bottom;
+	font-size: 70%;
+	float: left;
+	overflow: hidden;
+}
+
+#linksLeft DIV
+{
+	padding: 22px 0 0 10px;
+	margin: 0;
+	float: left;
+}
+
+#linksLeft A
+{
+	color: black;
+	font-weight: bold;
+}
+
+#linksLeft A:hover
+{
+	color: maroon;
+}
+
+#body
+{
+	width: 570px;
+	border: thin  #000000;
+	float: left;
+}
+
+/* for 2 or more bodies */
+.body-top
+{
+	margin-top:5px;
+}
+
+#body-top, .body-top
+{
+	background-image: url('../images/body_top.gif');
+	height: 10px;
+	font-size: 1px;
+}
+
+#body-main, .body-main
+{
+	background-image: url('../images/body_bg.gif');
+	background-repeat: repeat-y;
+	padding: 0 7px 10px 7px;
+	margin: 0;
+	font-size: 75%;
+}
+
+.body-main
+{
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+#body-main DIV
+{
+}
+
+#body-bottom, .body-bottom
+{
+	margin: 0;
+	padding: 0;
+	background-image: url('../images/body_bottom.gif');
+	height: 11px;	
+	font-size: 1px;
+}
+
+#rcolumn
+{
+	width: 190px;
+	float: left;
+}
+
+#links-margin
+{
+	background-image: url('../images/body_margin.gif');
+	background-repeat: no-repeat;
+	width: 500px;
+	height: 8px;
+	font-size: 1px;
+	float: left;
+}
+
+#error
+{
+	border: gray 1px solid;
+	background-color: #FFFFCC;
+	margin: 0 0 5px 0;
+	padding: 5px;
+	font-weight: bold;
+}
+
+.note
+{
+	border: gray 1px solid;
+	background-color: #FFFFCC;
+	margin: 0 0 5px 0;
+	padding: 5px;
+}
+
+.sidebar
+{
+	padding-bottom: 5px;
+}
+
+.sidebar-main
+{
+	background-image: url('../images/sidebar_bg.gif');
+	background-repeat: repeat-y;
+	width: 190px;
+	margin: 0;
+}
+
+
+.sidebar-main ul
+{
+	list-style-type: none;
+	font-size: 75%;
+	margin: 0 0 0 10px;
+	padding: 3px 0 0 0;
+}
+
+/* 
+.sidebar-main li
+{
+}
+*/
+
+.sidebar ul a
+{
+	font-weight: bold;
+}
+
+.sidebarBottom
+{
+	background-image: url('../images/sidebar_bottom.gif');	
+	height: 13px;	
+	font-size: 1px;
+}
+
+.headerButton
+{
+	float: right;
+}

@@ -1,0 +1,42 @@
+  BODY { 
+         font-family : Arial,Helvetica,Times;
+         font-size : 10pt;
+         color : black;
+         background : white
+}
+  A:LINK { 
+         font-weight : bold;
+         text-decoration : none;
+         color : #990000
+}
+  A:VISITED { 
+         font-weight : bold;
+         text-decoration : none;
+         color : #995555
+}
+  TH {
+         font-family : Arial,Helvetica,Times;
+         font-size : 10pt;
+         color : black;
+		 border: 1px solid black;
+
+}
+  TD { 
+         font-family : Arial,Helvetica,Times;
+         font-size : 10pt; 
+         color : black;
+		 border: 1px solid black;
+}
+  DIV { 
+         font-family : Arial,Helvetica,Times;
+         font-size : 16pt;
+         font-weight : bold;
+}
+  H1 {  
+         font-family : Arial,Helvetica,Times;
+         font-size : 18pt;
+}
+  EM {
+         font-weight : bold;
+         color : #884400;
+}

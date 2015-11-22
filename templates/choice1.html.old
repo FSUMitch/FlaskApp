@@ -1,0 +1,759 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0031)https://www.cs.fsu.edu/current/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>FSU Computer Science - </title>
+
+<style type="text/css">#DIV_1 {
+    height: 386px;
+    text-align: left;
+    width: 760px;
+    perspective-origin: 380px 193px;
+    transform-origin: 380px 193px;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+    margin: 0px 114.5px;
+}/*#DIV_1*/
+
+#SCRIPT_2 {
+    text-align: left;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+}/*#SCRIPT_2*/
+
+#DIV_3 {
+    height: 23px;
+    text-align: left;
+    width: 760px;
+    perspective-origin: 380px 11.5px;
+    transform-origin: 380px 11.5px;
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+}/*#DIV_3*/
+
+#DIV_4 {
+    float: left;
+    height: 23px;
+    text-align: left;
+    width: 151px;
+    perspective-origin: 75.5px 11.5px;
+    transform-origin: 75.5px 11.5px;
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+}/*#DIV_4*/
+
+#A_5 {
+    color: rgb(0, 0, 0);
+    text-align: left;
+    text-decoration: none;
+    border: 0px none rgb(0, 0, 0);
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    outline: rgb(0, 0, 0) none 0px;
+}/*#A_5*/
+
+#IMG_6 {
+    display: block;
+    height: 23px;
+    text-align: left;
+    width: 151px;
+    perspective-origin: 75.5px 11.5px;
+    transform-origin: 75.5px 11.5px;
+    border: 0px solid rgb(0, 0, 0);
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+}/*#IMG_6*/
+
+#DIV_7 {
+    float: right;
+    height: 13px;
+    text-align: right;
+    width: 157.172px;
+    perspective-origin: 78.5781px 9px;
+    transform-origin: 78.5781px 9px;
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    padding: 5px 0px 0px;
+}/*#DIV_7*/
+
+#A_8, #A_9, #A_11 {
+    color: rgb(0, 0, 0);
+    text-align: right;
+    text-decoration: none;
+    border: 0px none rgb(0, 0, 0);
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    outline: rgb(0, 0, 0) none 0px;
+}/*#A_8, #A_9, #A_11*/
+
+#A_10 {
+    color: rgb(0, 0, 0);
+    text-align: right;
+    text-decoration: none;
+    border: 0px none rgb(0, 0, 0);
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    outline: rgb(0, 0, 0) none 0px;
+}/*#A_10*/
+
+#H1_12 {
+    clear: both;
+    height: 50px;
+    text-align: left;
+    width: 760px;
+    perspective-origin: 380px 25px;
+    transform-origin: 380px 25px;
+    font: normal normal bold normal 17.28px / normal tahoma, sans-serif;
+    margin: 0px;
+}/*#H1_12*/
+
+#IMG_13 {
+    display: block;
+    height: 50px;
+    text-align: left;
+    width: 760px;
+    perspective-origin: 380px 25px;
+    transform-origin: 380px 25px;
+    font: normal normal bold normal 17.28px / normal tahoma, sans-serif;
+}/*#IMG_13*/
+
+#DIV_14 {
+    text-align: left;
+    width: 760px;
+    perspective-origin: 380px 0px;
+    transform-origin: 380px 0px;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+}/*#DIV_14*/
+
+#DIV_15 {
+    float: left;
+    height: 39px;
+    text-align: left;
+    vertical-align: bottom;
+    width: 256px;
+    perspective-origin: 128px 19.5px;
+    transform-origin: 128px 19.5px;
+    background: rgba(0, 0, 0, 0) url(https://www.cs.fsu.edu/images/links_left.gif) repeat scroll 0% 0% / auto padding-box border-box;
+    font: normal normal normal normal 10.08px / normal tahoma, sans-serif;
+    overflow: hidden;
+}/*#DIV_15*/
+
+#DIV_16 {
+    float: left;
+    height: 12px;
+    text-align: left;
+    width: 40.0156px;
+    perspective-origin: 25px 17px;
+    transform-origin: 25px 17px;
+    font: normal normal normal normal 10.08px / normal tahoma, sans-serif;
+    padding: 22px 0px 0px 10px;
+}/*#DIV_16*/
+
+#A_17 {
+    color: rgb(0, 0, 0);
+    text-align: left;
+    border: 0px none rgb(0, 0, 0);
+    font: normal normal bold normal 10.08px / normal tahoma, sans-serif;
+    outline: rgb(0, 0, 0) none 0px;
+}/*#A_17*/
+
+#DIV_18 {
+    float: left;
+    height: 31px;
+    text-align: left;
+    width: 495px;
+    perspective-origin: 247.5px 15.5px;
+    transform-origin: 247.5px 15.5px;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+}/*#DIV_18*/
+
+#UL_19 {
+    float: left;
+    height: 31px;
+    text-align: left;
+    width: 495px;
+    perspective-origin: 247.5px 15.5px;
+    transform-origin: 247.5px 15.5px;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    margin: 0px;
+    padding: 0px;
+}/*#UL_19*/
+
+#LI_20 {
+    background-position: 0px 8.64px;
+    float: left;
+    height: 31px;
+    width: 100px;
+    perspective-origin: 50px 15.5px;
+    transform-origin: 50px 15.5px;
+    background: rgba(0, 0, 0, 0) none no-repeat scroll 0px 8.64px / auto padding-box border-box;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+    list-style: none outside none;
+}/*#LI_20*/
+
+#A_21, #A_24, #A_27, #A_30, #A_33, #A_36 {
+    color: rgb(128, 0, 0);
+    text-align: left;
+    border: 0px none rgb(128, 0, 0);
+    font: normal normal bold normal 14.4px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    outline: rgb(128, 0, 0) none 0px;
+}/*#A_21, #A_24, #A_27, #A_30, #A_33, #A_36*/
+
+#IMG_22 {
+    color: rgb(128, 0, 0);
+    display: block;
+    height: 31px;
+    text-align: left;
+    width: 100px;
+    perspective-origin: 50px 15.5px;
+    transform-origin: 50px 15.5px;
+    border: 0px solid rgb(128, 0, 0);
+    font: normal normal bold normal 14.4px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    outline: rgb(128, 0, 0) none 0px;
+}/*#IMG_22*/
+
+#LI_23 {
+    background-position: 0px 8.64px;
+    float: left;
+    height: 31px;
+    width: 92px;
+    perspective-origin: 46px 15.5px;
+    transform-origin: 46px 15.5px;
+    background: rgba(0, 0, 0, 0) none no-repeat scroll 0px 8.64px / auto padding-box border-box;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+    list-style: none outside none;
+}/*#LI_23*/
+
+#IMG_25 {
+    color: rgb(128, 0, 0);
+    display: block;
+    height: 31px;
+    text-align: left;
+    width: 92px;
+    perspective-origin: 46px 15.5px;
+    transform-origin: 46px 15.5px;
+    border: 0px solid rgb(128, 0, 0);
+    font: normal normal bold normal 14.4px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    outline: rgb(128, 0, 0) none 0px;
+}/*#IMG_25*/
+
+#LI_26 {
+    background-position: 0px 8.64px;
+    float: left;
+    height: 31px;
+    width: 67px;
+    perspective-origin: 33.5px 15.5px;
+    transform-origin: 33.5px 15.5px;
+    background: rgba(0, 0, 0, 0) none no-repeat scroll 0px 8.64px / auto padding-box border-box;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+    list-style: none outside none;
+}/*#LI_26*/
+
+#IMG_28 {
+    color: rgb(128, 0, 0);
+    display: block;
+    height: 31px;
+    text-align: left;
+    width: 67px;
+    perspective-origin: 33.5px 15.5px;
+    transform-origin: 33.5px 15.5px;
+    border: 0px solid rgb(128, 0, 0);
+    font: normal normal bold normal 14.4px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    outline: rgb(128, 0, 0) none 0px;
+}/*#IMG_28*/
+
+#LI_29 {
+    background-position: 0px 8.64px;
+    float: left;
+    height: 31px;
+    width: 79px;
+    perspective-origin: 39.5px 15.5px;
+    transform-origin: 39.5px 15.5px;
+    background: rgba(0, 0, 0, 0) none no-repeat scroll 0px 8.64px / auto padding-box border-box;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+    list-style: none outside none;
+}/*#LI_29*/
+
+#IMG_31 {
+    color: rgb(128, 0, 0);
+    display: block;
+    height: 31px;
+    text-align: left;
+    width: 79px;
+    perspective-origin: 39.5px 15.5px;
+    transform-origin: 39.5px 15.5px;
+    border: 0px solid rgb(128, 0, 0);
+    font: normal normal bold normal 14.4px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    outline: rgb(128, 0, 0) none 0px;
+}/*#IMG_31*/
+
+#LI_32 {
+    background-position: 0px 8.64px;
+    float: left;
+    height: 31px;
+    width: 71px;
+    perspective-origin: 35.5px 15.5px;
+    transform-origin: 35.5px 15.5px;
+    background: rgba(0, 0, 0, 0) none no-repeat scroll 0px 8.64px / auto padding-box border-box;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+    list-style: none outside none;
+}/*#LI_32*/
+
+#IMG_34 {
+    color: rgb(128, 0, 0);
+    display: block;
+    height: 31px;
+    text-align: left;
+    width: 71px;
+    perspective-origin: 35.5px 15.5px;
+    transform-origin: 35.5px 15.5px;
+    border: 0px solid rgb(128, 0, 0);
+    font: normal normal bold normal 14.4px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    outline: rgb(128, 0, 0) none 0px;
+}/*#IMG_34*/
+
+#LI_35 {
+    background-position: 0px 8.64px;
+    float: left;
+    height: 31px;
+    width: 86px;
+    perspective-origin: 43px 15.5px;
+    transform-origin: 43px 15.5px;
+    background: rgba(0, 0, 0, 0) none no-repeat scroll 0px 8.64px / auto padding-box border-box;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+    list-style: none outside none;
+}/*#LI_35*/
+
+#IMG_37 {
+    color: rgb(128, 0, 0);
+    display: block;
+    height: 31px;
+    text-align: left;
+    width: 86px;
+    perspective-origin: 43px 15.5px;
+    transform-origin: 43px 15.5px;
+    border: 0px solid rgb(128, 0, 0);
+    font: normal normal bold normal 14.4px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    outline: rgb(128, 0, 0) none 0px;
+}/*#IMG_37*/
+
+#DIV_38 {
+    float: left;
+    height: 31px;
+    text-align: left;
+    width: 9px;
+    perspective-origin: 4.5px 15.5px;
+    transform-origin: 4.5px 15.5px;
+    background: rgba(0, 0, 0, 0) url(https://www.cs.fsu.edu/images/wingfiel/links_right.gif) repeat scroll 0% 0% / auto padding-box border-box;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+}/*#DIV_38*/
+
+#DIV_39 {
+    float: left;
+    height: 8px;
+    text-align: left;
+    width: 500px;
+    perspective-origin: 250px 4px;
+    transform-origin: 250px 4px;
+    background: rgba(0, 0, 0, 0) url(https://www.cs.fsu.edu/images/body_margin.gif) no-repeat scroll 0% 0% / auto padding-box border-box;
+    font: normal normal normal normal 1px / normal tahoma, sans-serif;
+}/*#DIV_39*/
+
+#DIV_40 {
+    float: left;
+    height: 205px;
+    text-align: left;
+    width: 570px;
+    perspective-origin: 285px 102.5px;
+    transform-origin: 285px 102.5px;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+}/*#DIV_40*/
+
+#DIV_41 {
+    height: 23px;
+    text-align: left;
+    width: 570px;
+    perspective-origin: 285px 11.5px;
+    transform-origin: 285px 11.5px;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+}/*#DIV_41*/
+
+#IMG_42 {
+    display: block;
+    height: 23px;
+    text-align: left;
+    width: 570px;
+    perspective-origin: 285px 11.5px;
+    transform-origin: 285px 11.5px;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+}/*#IMG_42*/
+
+#DIV_43 {
+    height: 157.797px;
+    text-align: left;
+    width: 559px;
+    perspective-origin: 285px 83.8906px;
+    transform-origin: 285px 83.8906px;
+    background: rgba(0, 0, 0, 0) url(https://www.cs.fsu.edu/images/body_bg.gif) repeat-y scroll 0% 0% / auto padding-box border-box;
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    padding: 0px 4px 10px 7px;
+}/*#DIV_43*/
+
+#DIV_44 {
+    float: right;
+    height: 172px;
+    text-align: left;
+    width: 250px;
+    perspective-origin: 126px 87px;
+    transform-origin: 126px 87px;
+    border: 1px solid rgb(128, 128, 128);
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    margin: 4px;
+}/*#DIV_44*/
+
+#IMG_45 {
+    display: block;
+    height: 172px;
+    text-align: left;
+    width: 250px;
+    perspective-origin: 125px 86px;
+    transform-origin: 125px 86px;
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+}/*#IMG_45*/
+
+#P_46 {
+    height: 13px;
+    text-align: left;
+    width: 559px;
+    perspective-origin: 279.5px 6.5px;
+    transform-origin: 279.5px 6.5px;
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    margin: 0px 0px 10.8px;
+}/*#P_46*/
+
+#H3_47, #H3_49, #H3_51, #H3_53, #H3_57 {
+    height: 13px;
+    text-align: left;
+    width: 549px;
+    perspective-origin: 279.5px 6.5px;
+    transform-origin: 279.5px 6.5px;
+    border-left: 5px solid rgb(192, 192, 192);
+    font: normal normal bold normal 10.8px / normal tahoma, sans-serif;
+    margin: 8px 0px 3px;
+    padding: 0px 0px 0px 5px;
+}/*#H3_47, #H3_49, #H3_51, #H3_53, #H3_57*/
+
+#A_48, #A_50, #A_54, #A_56 {
+    color: rgb(128, 0, 0);
+    text-align: left;
+    border: 0px none rgb(128, 0, 0);
+    font: normal normal bold normal 10.8px / normal tahoma, sans-serif;
+    outline: rgb(128, 0, 0) none 0px;
+}/*#A_48, #A_50, #A_54, #A_56*/
+
+#A_52, #A_58 {
+    color: rgb(128, 0, 0);
+    text-align: left;
+    border: 0px none rgb(128, 0, 0);
+    font: normal normal bold normal 10.8px / normal tahoma, sans-serif;
+    outline: rgb(128, 0, 0) none 0px;
+}/*#A_52, #A_58*/
+
+#H3_55 {
+    height: 26px;
+    text-align: left;
+    width: 549px;
+    perspective-origin: 279.5px 13px;
+    transform-origin: 279.5px 13px;
+    border-left: 5px solid rgb(192, 192, 192);
+    font: normal normal bold normal 10.8px / normal tahoma, sans-serif;
+    margin: 8px 0px 3px;
+    padding: 0px 0px 0px 5px;
+}/*#H3_55*/
+
+#DIV_59 {
+    height: 11px;
+    text-align: left;
+    width: 570px;
+    perspective-origin: 285px 5.5px;
+    transform-origin: 285px 5.5px;
+    background: rgba(0, 0, 0, 0) url(https://www.cs.fsu.edu/images/body_bottom.gif) repeat scroll 0% 0% / auto padding-box border-box;
+    font: normal normal normal normal 1px / normal tahoma, sans-serif;
+}/*#DIV_59*/
+
+#DIV_60 {
+    float: left;
+    height: 269px;
+    text-align: left;
+    width: 190px;
+    perspective-origin: 95px 134.5px;
+    transform-origin: 95px 134.5px;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+}/*#DIV_60*/
+
+#DIV_61 {
+    height: 264px;
+    text-align: left;
+    width: 190px;
+    perspective-origin: 95px 134.5px;
+    transform-origin: 95px 134.5px;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+    padding: 0px 0px 5px;
+}/*#DIV_61*/
+
+#IMG_62 {
+    display: block;
+    height: 20px;
+    text-align: left;
+    width: 190px;
+    perspective-origin: 95px 10px;
+    transform-origin: 95px 10px;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+}/*#IMG_62*/
+
+#DIV_63 {
+    height: 231px;
+    text-align: left;
+    width: 190px;
+    perspective-origin: 95px 115.5px;
+    transform-origin: 95px 115.5px;
+    background: rgba(0, 0, 0, 0) url(https://www.cs.fsu.edu/images/sidebar_bg.gif) repeat-y scroll 0% 0% / auto padding-box border-box;
+    font: normal normal normal normal 14.4px / normal tahoma, sans-serif;
+}/*#DIV_63*/
+
+#UL_64 {
+    height: 228px;
+    text-align: left;
+    width: 180px;
+    perspective-origin: 90px 115.5px;
+    transform-origin: 90px 115.5px;
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    margin: 0px 0px 0px 10px;
+    padding: 3px 0px 0px;
+}/*#UL_64*/
+
+#LI_65, #LI_69, #LI_71, #LI_77 {
+    background-position: 0px 6.48px;
+    height: 26px;
+    width: 160px;
+    perspective-origin: 85px 14px;
+    transform-origin: 85px 14px;
+    background: rgba(0, 0, 0, 0) url(https://www.cs.fsu.edu/images/bullet.gif) no-repeat scroll 0px 6.48px / auto padding-box border-box;
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    margin: 0px 10px 0px 0px;
+    padding: 0px 0px 2px 10px;
+}/*#LI_65, #LI_69, #LI_71, #LI_77*/
+
+#A_66, #A_68, #A_72, #A_74, #A_76, #A_80, #A_82, #A_84 {
+    color: rgb(128, 0, 0);
+    text-align: left;
+    border: 0px none rgb(128, 0, 0);
+    font: normal normal bold normal 10.8px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    outline: rgb(128, 0, 0) none 0px;
+}/*#A_66, #A_68, #A_72, #A_74, #A_76, #A_80, #A_82, #A_84*/
+
+#LI_67, #LI_73, #LI_79, #LI_83 {
+    background-position: 0px 6.48px;
+    height: 13px;
+    width: 160px;
+    perspective-origin: 85px 7.5px;
+    transform-origin: 85px 7.5px;
+    background: rgba(0, 0, 0, 0) url(https://www.cs.fsu.edu/images/bullet.gif) no-repeat scroll 0px 6.48px / auto padding-box border-box;
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    margin: 0px 10px 0px 0px;
+    padding: 0px 0px 2px 10px;
+}/*#LI_67, #LI_73, #LI_79, #LI_83*/
+
+#A_70, #A_78 {
+    color: rgb(128, 0, 0);
+    text-align: left;
+    border: 0px none rgb(128, 0, 0);
+    font: normal normal bold normal 10.8px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    outline: rgb(128, 0, 0) none 0px;
+}/*#A_70, #A_78*/
+
+#LI_75 {
+    background-position: 0px 6.48px;
+    height: 39px;
+    width: 160px;
+    perspective-origin: 85px 20.5px;
+    transform-origin: 85px 20.5px;
+    background: rgba(0, 0, 0, 0) url(https://www.cs.fsu.edu/images/bullet.gif) no-repeat scroll 0px 6.48px / auto padding-box border-box;
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    margin: 0px 10px 0px 0px;
+    padding: 0px 0px 2px 10px;
+}/*#LI_75*/
+
+#LI_81 {
+    background-position: 0px 6.48px;
+    height: 13px;
+    width: 160px;
+    perspective-origin: 85px 7.5px;
+    transform-origin: 85px 7.5px;
+    background: rgba(0, 0, 0, 0) url(https://www.cs.fsu.edu/images/bullet.gif) no-repeat scroll 0px 6.48px / auto padding-box border-box;
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    list-style: none outside none;
+    margin: 0px 10px 0px 0px;
+    padding: 0px 0px 2px 10px;
+}/*#LI_81*/
+
+#DIV_85 {
+    height: 13px;
+    text-align: left;
+    width: 190px;
+    perspective-origin: 95px 6.5px;
+    transform-origin: 95px 6.5px;
+    background: rgba(0, 0, 0, 0) url(https://www.cs.fsu.edu/images/sidebar_bottom.gif) repeat scroll 0% 0% / auto padding-box border-box;
+    font: normal normal normal normal 1px / normal tahoma, sans-serif;
+}/*#DIV_85*/
+
+#DIV_86 {
+    clear: both;
+    color: rgb(128, 128, 128);
+    text-align: left;
+    width: 736px;
+    perspective-origin: 380px 2.5px;
+    transform-origin: 380px 2.5px;
+    border: 0px none rgb(128, 128, 128);
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    margin: 0px 0px 24px;
+    outline: rgb(128, 128, 128) none 0px;
+    padding: 5px 12px 0px;
+}/*#DIV_86*/
+
+#DIV_87 {
+    color: rgb(128, 128, 128);
+    float: left;
+    height: 13px;
+    text-align: left;
+    width: 399.5px;
+    perspective-origin: 199.75px 6.5px;
+    transform-origin: 199.75px 6.5px;
+    border: 0px none rgb(128, 128, 128);
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    outline: rgb(128, 128, 128) none 0px;
+}/*#DIV_87*/
+
+#A_88, #A_89, #A_91, #A_94 {
+    color: rgb(128, 128, 128);
+    text-align: left;
+    text-decoration: none;
+    border: 0px none rgb(128, 128, 128);
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    outline: rgb(128, 128, 128) none 0px;
+}/*#A_88, #A_89, #A_91, #A_94*/
+
+#A_90, #A_92 {
+    color: rgb(128, 128, 128);
+    text-align: left;
+    text-decoration: none;
+    border: 0px none rgb(128, 128, 128);
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    outline: rgb(128, 128, 128) none 0px;
+}/*#A_90, #A_92*/
+
+#DIV_93 {
+    color: rgb(128, 128, 128);
+    float: right;
+    height: 13px;
+    text-align: left;
+    width: 15.4531px;
+    perspective-origin: 7.71875px 6.5px;
+    transform-origin: 7.71875px 6.5px;
+    border: 0px none rgb(128, 128, 128);
+    font: normal normal normal normal 10.8px / normal tahoma, sans-serif;
+    outline: rgb(128, 128, 128) none 0px;
+}/*#DIV_93*/
+
+
+	@import "../css/global.css";
+	@import "../css/page.css";
+</style>
+<link href="test.css" rel="stylesheet" type="text/css" />
+<link href="global.css" rel="stylesheet" type="text/css" />
+<link href="page.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="preloadImages();">
+<div id="main">
+	 
+
+<!-- Begin include (header.php) -->
+<script type="text/javascript" src="./FSU Computer Science -_files/preload.js"></script>
+
+<div id="header">
+  <div id="cslogo"><a href="http://www.cs.fsu.edu/index.php"><img name="cs_mini" src="./FSU Computer Science -_files/cs_mini.gif" width="151" height="23" border="0" alt="FSU Computer Science"></a></div>
+<div id="minilinks"><a href="https://www.cs.fsu.edu/site/help.php">Help</a> | 
+    <a href="https://www.cs.fsu.edu/admin/login.php">Login</a> 
+   | <a href="https://www.cs.fsu.edu/site/contact.php">Contact</a> | <a href="https://www.cs.fsu.edu/site/sitemap.php">Site Map</a></div>
+</div>
+<h1><img src="./FSU Computer Science -_files/cs.gif" width="760" height="50" alt="FSU Computer Science"></h1>
+<div>
+  <div id="linksLeft">
+     <div>
+<!-- Begin XML ******************************************************************* -->
+<a href="http://www.cs.fsu.edu/index.php">Home</a> &gt; 
+	  
+
+<!-- End XML ********************************************************************* -->
+</div>
+  </div>
+  <div id="mainnav">
+   
+<!-- Begin XML ******************************************************************* -->
+<ul>
+  <li>
+   
+      <img border="0" name="prospective_link" src="./FSU Computer Science -_files/prospective_link.gif" alt="Prospective Students">
+    </a>
+  </li>
+  <li>
+    
+      <img border="0" name="current_link" src="./FSU Computer Science -_files/current_link.gif" alt="Current Students">
+    </a>
+  </li>
+  <li>
+    
+      <img border="0" name="faculty_link" src="./FSU Computer Science -_files/faculty_link.gif" alt="People">
+    </a>
+  </li>
+  <li>
+    
+      <img border="0" name="research_link" src="./FSU Computer Science -_files/research_link.gif" alt="Research">
+    </a>
+  </li>
+  <li>
+    
+      <img border="0" name="alumni_link" src="./FSU Computer Science -_files/alumni_link.gif" alt="Alumni">
+    </a>
+  </li>
+  <li>
+    
+      <img border="0" name="resources_link" src="./FSU Computer Science -_files/resources_link.gif" alt="Resources &amp; Forms">
+    </a>
+  </li>
+</ul>
+
+<!-- End XML ********************************************************************* -->
+  </div>
+  <div id="body">
+		<div><img src="./FSU Computer Science -_files/current.gif" alt="Current Students"></div>
+  <div id="links-right"></div>
+  <div id="links-margin"></div>
+  		<p style="margin-top: 0; font-size: 100%">&nbsp;</p>
+			<h3><a href="file:///Macintosh%20HD/Users/sjbratberg/Desktop/CS%20website/students.html">Students</a></h3>
+            <h3><a href="">Employers</a></h3>
+</div>
+
+
+<link href="global.css" rel="stylesheet" type="text/css">
+<link href="page.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+</body>
+</html>

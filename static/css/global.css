@@ -1,0 +1,287 @@
+BODY
+{
+	background-image: url('../images/bg.gif');
+	background-repeat: repeat-x;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: tahoma, sans-serif;
+	font-size: 90%;
+}
+
+H1
+{
+	font-size: 120%;
+	padding: 0;
+	margin: 0;
+	clear: both;
+}
+
+UL
+{
+	padding: 0px 0 3px 0;
+	margin: 0 0 0 10px;
+	list-style: none none outside;
+}
+
+LI A
+{
+	font-weight: bold;
+}
+
+UL LI
+{
+	background: url('../images/bullet.gif') no-repeat 0 0.6em;
+	margin: 0 10px 0px 0;
+	padding: 0 0 2px 10px ;
+}
+
+
+/*
+OL LI
+{
+	background: none;
+	padding: 0;
+}
+*/
+
+/* IE ONLY!! 
+   Fixed ALL the problems with differing spacing between IE and Firefox 
+   
+   Thanks to this site:
+   http://www.info.com.ph/~etan/w3pantheon/style/modifiedsbmh.html
+   */
+* HTML UL LI 
+{
+	background-position: 0 0.8em;
+	margin: 0;
+}
+
+P
+{
+/*	margin: 0;
+	padding: 0;*/
+}
+
+H2, H3, H4, H5, H6, H7
+{
+	font-size: 75%;
+}
+
+A
+{
+	color: maroon;
+}
+
+A:hover
+{
+	color: #A67C52;
+}
+
+IMG
+{
+	display: block;
+	padding: 0;
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0;
+}
+
+IMG.photo
+{
+}
+
+FORM
+{
+/* padding necessary for internet explorer 
+   otherwise, it cuts off last item in the form */
+	padding: 0 0 10px 0;
+	margin: 0;
+}
+
+INPUT.text, TEXTAREA.text
+{
+	padding-left: 3px;
+	border: black 1px solid;
+	font-family: Tahoma, sans-serif;
+	font-size: 8pt;
+}
+
+INPUT.button
+{
+	background: url('../images/button.gif') no-repeat 0 2px;
+	border: 0;
+	width: 59px;
+	height: 20px;
+	font-weight: bold;
+	color: white;
+	font-family: tahoma, sans-serif;
+	padding: 0 0 0 0;
+	margin: 5px 0 0 0;
+	font-size: 80%;
+}
+
+INPUT.button-big
+{
+	background: url('../images/button-big.gif') no-repeat 0 2px;
+        border: 0;
+        width: 130px;
+        height: 20px;
+        font-weight: bold;
+        color: white;
+        font-family: tahoma, sans-serif;
+        padding: 0 0 0 0;
+        margin: 5px 0 0 0;
+        font-size: 80%;       
+}
+
+#main
+{
+	font-family: tahoma, sans-serif;
+	margin: 0 auto;
+	text-align: left;
+	width: 760px;
+}
+
+#header
+{
+	color: black;
+	height: 23px;
+	font-size: 75%;
+	text-align: left;
+}
+
+#cslogo
+{
+	float: left;
+}
+
+#header A
+{
+	color: black;
+	text-decoration: none;
+}
+
+#header A:hover
+{
+	text-decoration: underline;
+}
+
+#minilinks
+{
+	float: right;
+	text-align: right;
+	padding-top: 5px;
+}
+
+#mainnav
+{
+	float: left;
+}
+
+#mainnav UL
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+
+#mainnav LI
+{
+	background-image: none;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+
+#links-right
+{
+	background-image: url(../images/links_right.gif);
+	width: 9px;
+	height: 31px;
+	float: left;
+}
+
+#linksLeft
+{
+}
+
+#footer
+{
+	padding-top: 8px;
+	padding-right: 12px;
+	padding-left: 12px;
+	padding-bottom: 0;
+	margin: 0 0 24px 0;
+	color: gray;
+	font-size: 75%;
+}
+
+#footer A
+{
+	color: gray;
+	text-decoration: none;
+}
+
+#footer A:hover
+{
+	text-decoration: underline;
+}
+
+#foot-lcolumn
+{
+	float: left;
+}
+
+#foot-rcolumn
+{
+	float: right;
+}
+
+TR.header TD
+{
+	background-color: #dddddd;
+	font-weight: bold;
+}
+
+TABLE.bordered TD
+{
+	border-bottom: gray 1px solid;
+}
+
+.lalign
+{
+	text-align: left;
+}
+
+/* mini window of list options within a page */
+UL.floatingList
+{
+	background-color: #eeeeee;
+	float: right;
+	border: gray 1px solid;
+	padding: 8px 10px 10px 10px;
+	margin-right: 8px;
+}
+
+/*UL.floatingList LI
+{
+	padding-bottom: 2px;
+}
+*/
+
+/* little icons */
+.pdf
+{
+	padding: 1px 20px 5px 0;
+	background: url('../images/wingfiel/pdf.gif') no-repeat top right;
+}
+
+.doc
+{
+	padding: 1px 20px 5px 0;
+	background: url('../images/wingfiel/doc.gif') no-repeat top right;
+}
