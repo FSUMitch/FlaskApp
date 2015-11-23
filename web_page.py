@@ -123,17 +123,20 @@ def studentHome():
 
 @app.route('/Student/Search', methods=['GET', 'POST'])
 def studentSearch():
-    
-    if escape(session['type']) == 'student':
-        if request.method == 'POST':
-            return render_template('studentsearch.html')
-        else: 
-            return render_template('studentsearch.html',
-                        table=[(i[0], i[4], i[5], "", "", "") for i in adb.view_cjoini_t()])
+    try:
+        if escape(session['type']) == 'student':
+            if request.method == 'POST':
+                return render_template('studentsearch.html')
+            else: 
+                return render_template('studentsearch.html',
+                            table=[(i[0], i[4], i[5], "", "", "") for i in adb.view_cjoini_t()])
+    except:
+        pass
 
+    
     return redirect('/Students')
 
-@app.route('/Student/Apply')
+@app.route('/Student/Apply', methods=['POST'])
 def studentApply():
     return 'studentApply'
 
