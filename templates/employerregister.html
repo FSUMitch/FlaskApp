@@ -90,19 +90,19 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 				<br>
 				<form action="/Employer/Register/Confirm" method="post">
 				<p><label for="comp">Company Name:</label> <br />
-                <input id="comp" type="text" placeholder="Username" name="username"  value="{{request.form.username }}"></p>
+                <input id="comp" type="text" placeholder="Username" name="username" value="{{request.form.username }}" required="required"></p>
                 
 				<p><label for="pass">Password:</label><br />
-                <input id="pass" type="password" placeholder="Password" name="password" value="{{request.form.password }}"></p>
+                <input id="pass" type="password" placeholder="Password" name="password" value="{{request.form.password }}" required="required"></p>
 				
 				<p><label for="con">Confirm Password:</label><br />
-                <input id="con" type="password" placeholder="Confirm Password" name="cpassword" value="{{request.form.cpassword }}"></p>
+                <input id="con" type="password" placeholder="Confirm Password" name="cpassword" value="{{request.form.cpassword }}" required="required"></p>
 				
 				<p><label for="email">E-mail Address:</label> <br />
-                <input id="email" type="text" placeholder="E-mail Address" name="email" value="{{request.form.email }}"></p>
+                <input id="email" type="text" placeholder="E-mail Address" name="email" value="{{request.form.email }}" required="required"></p>
                 
                 <p>Company Logo: <br /><input type="file" name="company_logo" size="n"> </p>
-                <p>Additional Files: <br /><input type="file" name="additional_files" size="n"> </p>
+                <p>Additional Files: <br /><input type="file" name="additional_files" size="n" required="required"> </p>
 				
 				<input class="btn btn-default" type="submit" value="Register">
 			  </form>
