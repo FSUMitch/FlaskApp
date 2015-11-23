@@ -87,9 +87,9 @@ table, th, td {
 </div>
 <!-- End include -->
 
-<div id="body">
-	<div><img src="/static/images/current.gif" alt="Current Students" /></div>
- 	<div id="body-main" style="padding-right: 4px;">
+<div id="body_list">
+	<div><img src="/static/images/blank_list.gif" alt="Current Students" /></div>
+ 	<div id="body-main_list" style="padding-right: 4px; padding-left:">
     <img src="/static/images/SICP_main.jpg" alt="logo"  />
     
   		<p style="margin-top: 0; font-size: 100%;">&nbsp;</p>
@@ -104,26 +104,28 @@ table, th, td {
 					  </tr>
                     {% for row in table %}
                       <tr>
-                      {% set rowloop = loop %}
-                      {% for cell in row %}
-                        <td id="cell-{{ rowloop.index }}-{{ loop.index }}">{{ cell }}</td>
-                      {% endfor %}
+                          <td id="0">{{  row[0]  }}</td>
+                          <td id="1">{{  row[1]  }}</td>
+                          <td id="2">{{  row[2]  }}</td>
+                          <td id="3"><a href=" insert link ">{{  row[3]  }}</a></td>
+                          <td id="4">{{  row[4]  }}</td>
+                          <td id="5"><a href=" insert link ">{{  row[5]  }}</a></td>
                       </tr>
                     {% endfor %}
                 </table>
             
             
         </div>
-        <div id="body-bottom"></div>
+        <div id="body-bottom_list"></div>
   </div>
 
-	<div id="rcolumn">
+	
 		
 <!-- Begin XML ******************************************************************* -->
-<div class="sidebar"><img src="/static/images/student_right_link.gif" width="190" height="20" alt="StudentLinks"/><div class="sidebar-main"><ul><li><a href="undergrad/index.html">Messages</a></li><li><a href="undergrad/minor.html">Search for Opportunities</a></li><li><a href="compbio/index.html">View Documents</a></li><li><a href="http://www.cs.fsu.edu/scholarships/index.php">Student Scholarship/Fellowship Opportunities</a></li><li><a href="http://fsu.acm.org/">ACM</a></li></ul></div><div class="sidebarBottom"></div></div>
+
 
 <!-- End XML ********************************************************************* -->
-	</div>
+	
 	<!-- Begin include (footer.php) ******************************************************** -->
   <div id="footer">
     <div id="foot-lcolumn">
