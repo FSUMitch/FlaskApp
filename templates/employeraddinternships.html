@@ -89,13 +89,17 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 				<h1>Add an Internship</h1>
 				<br>
 				<form action="" method="post">
+                <label for="i_title">Internship Title:</label><br />
 				<input type="text" placeholder="Position Name" name="posname" value="{{
 					request.form.posname }}">
-                                <br>
-				<input class="btn btn-default" type="submit" value="Submit">
-                <br /><br />
+                <br/>
+                <label for="sometthing">Something else:</label><br />
+				<input type="text" placeholder="something" name="" value="">
+                <br />
                 <input type="file" name="internship_file" size="n"> 
-				</form>
+				<br /><br />
+                <input class="btn btn-default" type="submit" value="Submit"></form>
+                
 				{% if error %}
 				<p class="error"><strong>Error:</strong> {{ error }}
 				{% endif %}
