@@ -88,7 +88,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     		<img src="/static/images/SICP_main.jpg" alt="logo"  />
 				<h1>Please Register Your Company</h1>
 				<br>
-				<form action="/Employer/Register/Confirm" method="post">
+				<form action="/Employers/Register" method="post">
 				<p><label for="comp">Company Name:</label> <br />
                 <input id="comp" type="text" placeholder="Username" name="username" value="{{request.form.username }}" required="required"></p>
                 
@@ -102,12 +102,12 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                 <input id="email" type="text" placeholder="E-mail Address" name="email" value="{{request.form.email }}" required="required"></p>
                 
                 <p>Company Logo: <br /><input type="file" name="company_logo" size="n"> </p>
-                <p>Additional Files: <br /><input type="file" name="additional_files" size="n" required="required"> </p>
+                <p>Additional Files: <br /><input type="file" name="additional_files" size="n"> </p>
 				
 				<input class="btn btn-default" type="submit" value="Register">
 			  </form>
-				{% if error %}
-				<p class="error"><strong>Error:</strong> {{ error }}
+			  {% if error %}
+		      <p class="error"><strong>Error:</strong> {{ error }}
 			  {% endif %}</p>
 </div>
 		</body>

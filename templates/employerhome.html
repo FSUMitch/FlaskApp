@@ -91,8 +91,18 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                         <h3><a href="/Employer/AddInternships">Add an Internship Position</a></h3>
                         <h3><a href="/Employer/ViewInternships">View Your Internships </a></h3>
                                                                           
-        </div>                                                                  
-        <div id="body-bottom"></div>
+            
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for category, message in messages %}
+		  <li class="{{ category }}">{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}		
+	</div>
+		<div id="body-bottom"></div>
   </div>
 	<div id="rcolumn">
 		
