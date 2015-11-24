@@ -1,7 +1,7 @@
 // Adobe ImageReady Preload Script
 // modified, of course, to allow for a base directory
 
-var baseDir = "/images/";
+var baseDir = "../static/images/";
 
 function newImage(arg) {
 	if (document.images) {
