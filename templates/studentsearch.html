@@ -11,11 +11,19 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <style type="text/css">
 	@import "/static/css/global.css";
 	@import "/static/css/page.css";
-table, th, td {
-    border: 1px solid black;
-}
+
 
 </style>
+<script type="text/javascript" src="src/tablesorter/jquery-latest.js"></script> 
+<script type="text/javascript" src="src/tablesorter/jquery.tablesorter.js"></script> 
+<script type="text/javascript">
+
+$(document).ready(function() 
+    { 
+        $("#job_list").tablesorter(); 
+    } 
+); 
+</script>
 </head>
 
 <body onload="preloadImages();">
@@ -93,15 +101,17 @@ table, th, td {
     <img src="/static/images/SICP_main.jpg" alt="logo"  />
     
   		<p style="margin-top: 0; font-size: 100%;">&nbsp;</p>
-			<table>
-					  <tr>
+        
+        <!--Beginning of the Table -->
+			<table id="job_list" class="tablesorter">
+					  <tr><thead>
 						<th>Company Name</th>
 						<th>Company E-mail</th>
                         <th>Internship Position</th>
                         <th>Internship Description</th>
                         <th>Company Logo</th>
                         <th>Application Link</th>
-					  </tr>
+					  </thead></tr><tbody>
                     {% for row in table %}
                       <tr>
                           <td id="0">{{  row[0]  }}</td>
@@ -110,7 +120,45 @@ table, th, td {
                           <td id="3"><a href=" insert link ">{{  row[3]  }}</a></td>
                           <td id="4">{{  row[4]  }}</td>
                           <td id="5"><a href=" insert link ">{{  row[5]  }}</a></td>
+                          
                       </tr>
+                      
+                      <tr> 
+    <td>Smith</td> 
+    <td>John</td> 
+    <td>jsmith@gmail.com</td> 
+    <td>$50.00</td> 
+    <td>http://www.jsmith.co</td>
+</tr> 
+<tr> 
+    <td>Bach</td> 
+    <td>Frank</td> 
+    <td>fbach@yahoo.com</td> 
+    <td>$50.00</td> 
+    <td>http://www.frank.com</td> 
+    <td>Tim</td>
+</tr> 
+<tr> 
+    <td>Doe</td> 
+    <td>Jason</td> 
+    <td>jdoe@hotmail.com</td> 
+    <td>$100.00</td> 
+    <td>http://www.jdoe.com</td> 
+    <td>Tim</td>
+</tr> 
+<tr> 
+    <td>Conway</td> 
+    <td>Tim</td> 
+    <td>tconway@earthlink.net</td> 
+    <td>$50.00</td> 
+    <td>http://www.timconway.com</td> 
+    <td>Tim</td>
+</tr> 
+                      
+                      
+                      
+                      </tbody>
+                      <!--End of the Table -->
                     {% endfor %}
                 </table>
             

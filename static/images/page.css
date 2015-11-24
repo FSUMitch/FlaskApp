@@ -29,7 +29,7 @@ FORM {
     margin-bottom: -20px;
 }
 #linksLeft {
-    background-image: url('../images/links_left.gif');
+    background-image: url('../../images/links_left.gif');
     width: 256px;
     height: 39px;
     padding: 0 0 0 0;
@@ -60,12 +60,12 @@ FORM {
     margin-top:5px;
 }
 #body-top, .body-top {
-    background-image: url('../images/body_top.gif');
+    background-image: url('../../images/body_top.gif');
     height: 10px;
     font-size: 1px;
 }
 #body-main, .body-main {
-    background-image: url('../images/body_bg.gif');
+    background-image: url('../../images/body_bg.gif');
     background-repeat: repeat-y;
     padding: 0 7px 10px 7px;
     margin: 0;
@@ -80,7 +80,7 @@ FORM {
 #body-bottom, .body-bottom {
     margin: 0;
     padding: 0;
-    background-image: url('../images/body_bottom.gif');
+    background-image: url('../../images/body_bottom.gif');
     height: 11px;
     font-size: 1px;
 }
@@ -89,7 +89,7 @@ FORM {
     float: left;
 }
 #links-margin {
-    background-image: url('../images/body_margin.gif');
+    background-image: url('../../images/body_margin.gif');
     background-repeat: no-repeat;
     width: 500px;
     height: 8px;
@@ -113,7 +113,7 @@ FORM {
     padding-bottom: 5px;
 }
 .sidebar-main {
-    background-image: url('../images/sidebar_bg.gif');
+    background-image: url('../../images/sidebar_bg.gif');
     background-repeat: repeat-y;
     width: 190px;
     margin: 0;
@@ -133,7 +133,7 @@ FORM {
     font-weight: bold;
 }
 .sidebarBottom {
-    background-image: url('../images/sidebar_bottom.gif');
+    background-image: url('../../images/sidebar_bottom.gif');
     height: 13px;
     font-size: 1px;
 }

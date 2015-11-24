@@ -3,6 +3,10 @@
 
 var baseDir = "../static/images/";
 
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+
 function newImage(arg) {
 	if (document.images) {
 		rslt = new Image();
