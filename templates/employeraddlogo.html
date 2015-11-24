@@ -86,24 +86,16 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 			<div id="body-main" style="padding-right: 4px;">
             
     		<img src="/static/images/SICP_main.jpg" alt="logo"  />
-				<h1>Add an Internship</h1>
-				<br>
-				<form action="" method="post" enctype="multipart/form-data">
-                <label for="i_title">Internship Title:</label><br />
-				<input type="text" placeholder="Position Name" name="posname" required="required" value="{{
-					request.form.posname }}">
-                <br/><br/>
-                <label for="something">Please give a description of the position as a txt file:</label><br />
-				<!--<input type="text" placeholder="something" name="" value="">
-                <br />-->
-                <input type="file" name="txt_file" size="n"> 
-				<br/><br/>
+                <h1>Add a Logo</h1>
+                <br>
+                <form action="" method="post" enctype="multipart/form-data">
+                <input type="file" name="img_file" size="n"><br/><br/>
                 <input class="btn btn-default" type="submit" value="Submit"></form>
                 
-				{% if error %}
-				<p class="error"><strong>Error:</strong> {{ error }}</p>
-				{% endif %}
-			</div>
+                {% if error %}
+                <p class="error"><strong>Error:</strong> {{ error }}</p>
+                {% endif %}
+		</div>
 		</body>
 	<div id="body-bottom"></div>
 	</div>

@@ -161,10 +161,7 @@ def add_internship(email, posname):
     c.execute('SELECT name FROM {}'.format(INTERNSHIPTNAME))
     ctnum = len(c.fetchall())
 
-    for r in view_company_t():
-        if r[4] == email:
-            f_key = r[2]
-            break
+    f_key = get_cid(email)
 
     #put position name, iid, and key to company table into internship table
     c.execute("INSERT INTO {} values {}".format(INTERNSHIPTNAME, INTERNSHIPPARAMS),
@@ -178,6 +175,32 @@ def add_internship(email, posname):
     conn.close()
 
     return ctnum
+
+def get_cid(email):
+    conn = sqlite3.connect(DBNAME)
+    c = conn.cursor()
+
+    c.execute("SELECT cid FROM {} where email is '{}'".format(COMPANYTNAME, email))
+    data = c.fetchone()
+    cid = data[0]
+    
+    conn.commit()
+    conn.close()
+
+    return cid
+
+def get_sid(email):
+    conn = sqlite3.connect(DBNAME)
+    c = conn.cursor()
+
+    c.execute("SELECT sid FROM {} where email is '{}'".format(STUDENTTNAME, email))
+    data = c.fetchone()
+    cid = data[0]
+    
+    conn.commit()
+    conn.close()
+
+    return cid
 
 ############################
 #def edit_internship(name):#

@@ -10,6 +10,7 @@
 
 import sqlite3
 import database as adb
+import os
 
 from flask import Flask, flash, render_template, request, url_for, redirect, \
      g, escape, session
@@ -18,8 +19,16 @@ from flask import Flask, flash, render_template, request, url_for, redirect, \
 DATABASE = 'SCIP.db'
 PORT = 5003
 DEBUG = True
+LOGO_FOLDER = r'.\database\logos'
+DESC_FOLDER = r'.\database\descs'
+ALLOWED_IMG_EXT = set(['png', 'jpg', 'jpeg', 'gif'])
+
 app = Flask(__name__)
+app.config['LOGO_FOLDER'] = LOGO_FOLDER
+app.config['DESC_FOLDER'] = DESC_FOLDER
 app.secret_key = "asdfq3495basdfbsdpo2451"
+
+
 
 #################################
 #############WEBPAGE#############
@@ -38,6 +47,8 @@ def choice():
     try:
         if escape(session['type']) == 'student':
             return redirect('/Student/Home')
+        if escape(session['type']) == 'employer':
+            return redirect('/Employer/Home')
     except:
         pass
     
@@ -227,27 +238,65 @@ def employerHome():
     
     return redirect('/Employers')
 
-@app.route('/Employer/EditLogo')
+@app.route('/Employer/EditLogo', methods=['GET', 'POST'])
 def employerEditLogo():
+
+    if escape(session['type']) == 'employer':
+        if request.method == 'GET':
+            cid = adb.get_cid(escape(session['uname']))
+            if os.path.isfile(os.path.join(app.config['LOGO_FOLDER'],
+                                              "logo{}.jpg")):
+                return "nope"
+            else:
+                return render_template('employeraddlogo.html')
+
+
+        if request.method == 'POST':
+            #use the logged in uname(email) and position name
+            #to create position in db module 
+            cid = adb.get_cid(escape(session['uname']))
+            imgfile = request.files['img_file']
+            if imgfile and allowed_image(imgfile.filename):
+                fname = "logo{}.{}".format(cid, 'jpg')
+                imgfile.save(os.path.join(app.config['LOGO_FOLDER'],
+                                          fname))
+                flash("Successfully added your logo!")
+                return redirect('/Employer/Home')
+
+            else:
+                flash("Could not add image file")
+                return redirect('/Employer/Home')
+
     return 'employer'
 
 @app.route('/Employer/AddInternships', methods=['GET', 'POST'])
 def employerAddInt():
-    if request.method == 'POST':
-        #use the logged in uname(email) and position name
-        #to create position in db module
-        #need to implement description 
-        adb.add_internship(session['uname'], request.form['posname'])
-        flash("Successfully added your internship!")
-        return render_template('employerhome.html')
-    
+
     try:
         if escape(session['type']) == 'employer':
+            if request.method == 'POST':
+                #use the logged in uname(email) and position name
+                #to create position in db module 
+                iid = adb.add_internship(session['uname'], request.form['posname'])
+                txtfile = request.files['txt_file']
+                if txtfile and allowed_text(txtfile.filename):
+                    fname = "description{}.{}".format(iid, "txt")
+                    txtfile.save(os.path.join(app.config['DESC_FOLDER'],
+                                              fname))
+                    flash("Successfully added your internship!")
+                    return redirect('/Employer/Home')
+
+                else:
+                    flash("Could not add image file")
+                    return redirect('/Employer/Home')
+                
             return render_template('employeraddinternships.html')
+    
     except:
         pass
-
+    
     return redirect('/Employers')
+
 
 @app.route('/Employer/ViewInternships')
 def employerViewInt():
@@ -310,9 +359,17 @@ def reg_student(name, password, cpassword, email):
     else:
         adb.add_student(name, password, email)
         return False
-    
 
-################UTILITY DEBUGGING FUNCTIONS###################
+def allowed_image(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_IMG_EXT
+
+def allowed_text(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1] == "txt"
+
+####################################################
+###########UTILITY DEBUGGING FUNCTIONS##############
+####################################################
+
 @app.route('/Admin/RecreateDB')
 def adminDB():
     adb.create_db()
