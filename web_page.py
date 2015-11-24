@@ -162,6 +162,8 @@ def studentApply():
     
     return escape(session['type'])
 
+
+
 ########################
 #####Employee pages#####
 ########################

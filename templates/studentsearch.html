@@ -123,7 +123,10 @@ $(document).ready(function()
                           <td id="5"><a href=" insert link ">{{  row[5]  }}</a></td>
                           
 =======
-                          <td id="5"><form action="/Student/Apply" method="post"><button type="submit" name="internshipid" value="{{ row[5] }}">Apply!</button></form></td>
+                          <td id="5">
+                          
+                          
+                          </td>
 >>>>>>> origin/master
                       </tr>
                       
@@ -132,7 +135,14 @@ $(document).ready(function()
     <td>John</td> 
     <td>jsmith@gmail.com</td> 
     <td>$50.00</td> 
-    <td>http://www.jsmith.co</td>
+    <td></td>
+    <td><button id="myButton" class="float-left submit-button" >Apply!</button>
+
+							<script type="text/javascript">
+                                document.getElementById("myButton").onclick = function () {
+                                    location.href = "/Student/Apply" + id_variable ;
+                                };
+                            </script></td>
 </tr> 
 <tr> 
     <td>Bach</td> 
