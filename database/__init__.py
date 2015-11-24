@@ -27,7 +27,7 @@ COMPANYTRAITS = '(name text, password text, cid int primary key, active integer,
 COMPANYPARAMS = '(?, ?, ?, ?, ?)'
 
 STUDENTTNAME = 'Students'
-STUDENTTRAITS = '(name text, password text, sid int primary key, email text, intarray)'
+STUDENTTRAITS = '(name text, password text, sid int primary key, email text, intarray text)'
 STUDENTPARAMS = '(?, ?, ?, ?, ?)'
 
 INTERNSHIPTNAME = 'Internships'
@@ -179,8 +179,38 @@ def add_internship(email, posname):
 
     return ctnum
 
-#def edit_internship(name):
+############################
+#def edit_internship(name):#
+############################
 
+def apply_student(email, iid):
+    """Applies student, works directly with database"""
+    iid = int(iid)
+    
+    conn = sqlite3.connect(DBNAME)
+    c = conn.cursor()
+
+    c.execute('SELECT sid, intarray FROM {} WHERE email is "{}"'.format(STUDENTTNAME, email))
+    data = c.fetchone()
+
+    sid = data[0]
+    arr = data[1]
+    try:
+        arr[0]
+    except:
+        arr = str(arr)
+        
+    if arr[iid] == '0':
+        arr = arr[0:iid] + "1" + arr[iid+1:len(arr)]
+        c.execute('UPDATE {} SET intarray={} WHERE sid={}'.format(STUDENTTNAME, str(arr), sid))
+    else:
+        conn.commit()
+        conn.close()
+        return False
+    
+    conn.commit()
+    conn.close()
+    return True
 
 ########################################
 ##########VIEW TABLE FUNCTIONS##########
@@ -226,7 +256,9 @@ def view_internship_t():
     conn.close()
 
 def view_cjoini_t():
-    """yields company join internships joined on cid"""
+    """company name, comp password, company id, isactive, email,
+       name of pos, internshipid, cid, internshipactive
+       yields company join internships joined on cid"""
 
     conn = sqlite3.connect(DBNAME)
     c = conn.cursor()
@@ -235,5 +267,5 @@ def view_cjoini_t():
         yield e
 
     conn.commit()
-    conn.close()    
+    conn.close()
 

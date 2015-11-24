@@ -11,9 +11,8 @@
 import sqlite3
 import database as adb
 
-from flask import Flask, render_template, request, url_for, redirect, g, escape, session
-#from flask.ext.login import LoginManager, UserMixin, current_user, login_user, logout_user
-#from werkzeug import generate_password_hash, check_password_hash
+from flask import Flask, flash, render_template, request, url_for, redirect, \
+     g, escape, session
 
 #init stuff
 DATABASE = 'SCIP.db'
@@ -125,11 +124,11 @@ def studentHome():
 def studentSearch():
     try:
         if escape(session['type']) == 'student':
-            if request.method == 'POST':
+            if request.method == 'POST':#once we have search fields
                 return render_template('studentsearch.html')
             else: 
                 return render_template('studentsearch.html',
-                            table=[(i[0], i[4], i[5], "", "", "") for i in adb.view_cjoini_t()])
+                            table=[(i[0], i[4], i[5], "a", "b", i[6]) for i in adb.view_cjoini_t()])
     except:
         pass
 
@@ -138,7 +137,19 @@ def studentSearch():
 
 @app.route('/Student/Apply', methods=['POST'])
 def studentApply():
-    return 'studentApply'
+    if escape(session['type']) == 'student':
+        email = escape(session['uname']) #email of logged in student
+        iid   = request.form['internshipid']
+        
+        if adb.apply_student(email, iid): #if success, (hasn't already applied)
+            flash('You have successfully applied to this internship!')
+            return redirect("/Student/Search")
+        else: #student has already applied
+            flash('You have already applied to this internship!', 'error')
+            return redirect("/Student/Search")
+
+    
+    return escape(session['type'])
 
 ########################
 #####Employee pages#####
@@ -227,7 +238,8 @@ def employerAddInt():
         #to create position in db module
         #need to implement description 
         adb.add_internship(session['uname'], request.form['posname'])
-        return 'asdf' + render_template('employeraddinternships.html')
+        flash("Successfully added your internship!")
+        return render_template('employerhome.html')
     
     try:
         if escape(session['type']) == 'employer':

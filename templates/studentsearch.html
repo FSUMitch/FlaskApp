@@ -109,10 +109,19 @@ table, th, td {
                           <td id="2">{{  row[2]  }}</td>
                           <td id="3"><a href=" insert link ">{{  row[3]  }}</a></td>
                           <td id="4">{{  row[4]  }}</td>
-                          <td id="5"><a href=" insert link ">{{  row[5]  }}</a></td>
+                          <td id="5"><form action="/Student/Apply" method="post"><button type="submit" name="internshipid" value="{{ row[5] }}">Apply!</button></form></td>
                       </tr>
                     {% endfor %}
                 </table>
+				{% with messages = get_flashed_messages(with_categories=true) %}
+				  {% if messages %}
+					<ul class=flashes>
+					{% for category, message in messages %}
+					  <li class="{{ category }}">{{ message }}</li>
+					{% endfor %}
+					</ul>
+				  {% endif %}
+				{% endwith %}
             
             
         </div>
