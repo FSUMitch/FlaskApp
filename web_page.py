@@ -13,7 +13,7 @@ import database as adb
 import os
 
 from flask import Flask, flash, render_template, request, url_for, redirect, \
-     g, escape, session
+     g, escape, session, send_from_directory
 
 #init stuff
 DATABASE = 'SCIP.db'
@@ -36,6 +36,11 @@ app.secret_key = "asdfq3495basdfbsdpo2451"
 #################################
 #############WEBPAGE#############
 #################################
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route('/')
 def main():
