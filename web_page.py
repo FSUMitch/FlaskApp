@@ -23,6 +23,7 @@ LOGO_FOLDER = r'.\static\images'
 DESC_FOLDER = r'.\database\descs'
 RESUME_FOLDER = r'.\database\resumes'
 ALLOWED_IMG_EXT = set(['png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_TXT_EXT = set(['txt', 'doc', 'docx'])
 
 app = Flask(__name__)
 app.config['LOGO_FOLDER'] = LOGO_FOLDER
@@ -41,6 +42,11 @@ app.secret_key = "asdfq3495basdfbsdpo2451"
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+@app.route('/uploads/<path:filename>')
+def download_file(filename):
+    return send_from_directory(app.config['RESUME_FOLDER'],
+                               filename)
 
 @app.route('/')
 def main():
@@ -179,7 +185,7 @@ def studentResume():
                                               "resume{}.txt".format(sid))):
                 txtfile = open(os.path.join(app.config['RESUME_FOLDER'],
                                               "resume{}.txt".format(sid)))
-                return render_template('studenteditresume.html', txt=txtfile.read())
+                return render_template('studenteditresume.html', txt=txtfile.read(), sid=sid)
             else:
                 return render_template('studentaddresume.html')
 
@@ -405,7 +411,7 @@ def allowed_image(filename):
     return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_IMG_EXT
 
 def allowed_text(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1] == "txt"
+    return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_TXT_EXT
 
 ####################################################
 ###########UTILITY DEBUGGING FUNCTIONS##############
