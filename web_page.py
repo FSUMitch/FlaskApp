@@ -19,13 +19,16 @@ from flask import Flask, flash, render_template, request, url_for, redirect, \
 DATABASE = 'SCIP.db'
 PORT = 5003
 DEBUG = True
-LOGO_FOLDER = r'.\database\logos'
+LOGO_FOLDER = r'.\static\images'
 DESC_FOLDER = r'.\database\descs'
+RESUME_FOLDER = r'.\database\resumes'
 ALLOWED_IMG_EXT = set(['png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
 app.config['LOGO_FOLDER'] = LOGO_FOLDER
+app.config['LOGO_ACCESS'] = r'/static/images/'
 app.config['DESC_FOLDER'] = DESC_FOLDER
+app.config['RESUME_FOLDER'] = RESUME_FOLDER
 app.secret_key = "asdfq3495basdfbsdpo2451"
 
 
@@ -162,7 +165,37 @@ def studentApply():
     
     return escape(session['type'])
 
+@app.route('/Student/Resume', methods=['GET', 'POST'])
+def studentResume():
+    if escape(session['type']) == 'student':
+        if request.method == 'GET':
+            sid = adb.get_sid(escape(session['uname']))
+            if os.path.isfile(os.path.join(app.config['RESUME_FOLDER'],
+                                              "resume{}.txt".format(sid))):
+                txtfile = open(os.path.join(app.config['RESUME_FOLDER'],
+                                              "resume{}.txt".format(sid)))
+                return render_template('studenteditresume.html', txt=txtfile.read())
+            else:
+                return render_template('studentaddresume.html')
 
+
+        if request.method == 'POST':
+            #use the logged in uname(email) and position name
+            #to create position in db module 
+            sid = adb.get_sid(escape(session['uname']))
+            txtfile = request.files['txt_file']
+            if txtfile and allowed_text(txtfile.filename):
+                fname = "resume{}.{}".format(sid, 'txt')
+                txtfile.save(os.path.join(app.config['RESUME_FOLDER'],
+                                          fname))
+                flash("Successfully added your resume!")
+                return redirect('/Student/Home')
+
+            else:
+                flash("Could not add your resume")
+                return redirect('/Student/Home')
+
+    return request.method + ' student'
 
 ########################
 #####Employee pages#####
@@ -242,13 +275,14 @@ def employerHome():
 
 @app.route('/Employer/EditLogo', methods=['GET', 'POST'])
 def employerEditLogo():
-
     if escape(session['type']) == 'employer':
         if request.method == 'GET':
             cid = adb.get_cid(escape(session['uname']))
             if os.path.isfile(os.path.join(app.config['LOGO_FOLDER'],
-                                              "logo{}.jpg")):
-                return "nope"
+                                              "logo{}.jpg".format(cid))):
+                return render_template('employereditlogo.html',
+                                       imgpath=app.config['LOGO_ACCESS'] +
+                                            "logo{}.jpg".format(cid))
             else:
                 return render_template('employeraddlogo.html')
 
@@ -289,7 +323,7 @@ def employerAddInt():
                     return redirect('/Employer/Home')
 
                 else:
-                    flash("Could not add image file")
+                    flash("Could not add description file")
                     return redirect('/Employer/Home')
                 
             return render_template('employeraddinternships.html')

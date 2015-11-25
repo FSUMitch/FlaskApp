@@ -1,4 +1,3 @@
-
 <!DOCTYPE html
 PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -11,20 +10,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <style type="text/css">
 	@import "/static/css/global.css";
 	@import "/static/css/page.css";
-
-
 </style>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript" src="/src/tablesorter/jquery-latest.js"></script> 
-<script type="text/javascript" src="/src/tablesorter/jquery.tablesorter.js"></script> 
-<script type="text/javascript">
-
-$(document).ready(function() 
-    { 
-        $("#job_list").tablesorter(); 
-    } 
-); 
-</script>
 </head>
 
 <body onload="preloadImages();">
@@ -45,10 +31,9 @@ $(document).ready(function()
   <div id="linksLeft">
      <div>
 <!-- Begin XML ******************************************************************* -->
-<a href="/SCIP">Home</a> &gt; 
-	<a href="/Student/Home">Student</a> &gt;
-   	<a href="/Student/Search">Search</a> &gt;
-	  
+<a href="/Student/Home">Home</a> &gt; 
+	<a href="/Student/Resume">Resume</a> &gt;
+
 
 <!-- End XML ********************************************************************* -->
 </div>
@@ -95,61 +80,39 @@ $(document).ready(function()
   <div id="links-margin"></div>
 </div>
 <!-- End include -->
-
-<div id="body_list">
-	<div><img src="/static/images/blank_list.gif" alt="Current Students" /></div>
- 	<div id="body-main_list" style="padding-right: 4px; padding-left:">
-    <img src="/static/images/SICP_main.jpg" alt="logo"  />
-    
-  		<p style="margin-top: 0; font-size: 100%;">&nbsp;</p>
-        
-        <!--Beginning of the Table -->
-			<table id="job_list" class="tablesorter">
-					  <tr><thead>
-						<th>Company Name</th>
-						<th>Company E-mail</th>
-                        <th>Internship Position</th>
-                        <th>Internship Description</th>
-                        <th>Company Logo</th>
-                        <th>Application Link</th>
-					  </thead></tr><tbody>
-                    {% for row in table %}
-                      <tr>
-                          <td id="0">{{  row[0]  }}</td>
-                          <td id="1">{{  row[1]  }}</td>
-                          <td id="2">{{  row[2]  }}</td>
-                          <td id="3"><a href=" insert link ">{{  row[3]  }}</a></td>
-                          <td id="4">{{  row[4]  }}</td>
-                          <td id="5"><form action="/Student/Apply" method="post"><button type="submit" name="internshipid" value="{{ row[5] }}">Apply!</button></form></td>
-
-                      </tr>    
-                    {% endfor %}
-                    </tbody>
-                </table>
-                <!--End of the Table -->
+	<div id="body">
+		<body>
+        <div><img src="/static/images/blank_.gif" alt="Employers" /></div>
+			<div id="body-main" style="padding-right: 4px;">
+            
+    		<img src="/static/images/SICP_main.jpg" alt="logo"  />
+				<h1>Edit your resume</h1>
+				<form action="" method="post" enctype="multipart/form-data">
+                <br/>
+                <label><b>Your current resume:</b></label>
+                <p>{{ txt }}</p>
+                <label for="something">Upload resume:</label><br />
+				<!--<input type="text" placeholder="something" name="" value="">
+                <br />-->
+                <input type="file" name="txt_file" size="n"> 
+				<br/><br/>
+                <input class="btn btn-default" type="submit" value="Submit"></form>
                 
-				{% with messages = get_flashed_messages(with_categories=true) %}
-				  {% if messages %}
-					<ul class=flashes>
-					{% for category, message in messages %}
-					  <li class="{{ category }}">{{ message }}</li>
-					{% endfor %}
-					</ul>
-				  {% endif %}
-				{% endwith %}
-            
-            
-        </div>
-        <div id="body-bottom_list"></div>
-  </div>
-
-	
+				{% if error %}
+				<p class="error"><strong>Error:</strong> {{ error }}</p>
+				{% endif %}
+			</div>
+		</body>
+	<div id="body-bottom"></div>
+	</div>
+	<div id="rcolumn">
 		
 <!-- Begin XML ******************************************************************* -->
-
+<div class="sidebar"><img src="/static/images/employeelinks.gif" width="190" height="20" alt="Employee Links"/><div class="sidebar-main"><ul><li><a href="undergrad/index.html">Messages</a></li><li><a href="undergrad/minor.html">Applicants</a></li><li><a href="compbio/index.html">Search for Students</a></li></ul></div><div class="sidebarBottom"> </div>
 
 <!-- End XML ********************************************************************* -->
-	
+	</div>
+    </div>
 	<!-- Begin include (footer.php) ******************************************************** -->
   <div id="footer">
     <div id="foot-lcolumn">
@@ -159,9 +122,7 @@ $(document).ready(function()
       <a href="http://www.fsu.edu/misc/copyright.shtml">Copyright</a> | 
       <a href="https://www.cs.fsu.edu/site/feedback.php?referrer=/current/">Comment or Report a Problem</a>    </div>
     <div id="foot-rcolumn"><a href="#top">top</a>
-
     </div>
-  </div>
 <!-- End include *********************************************************************** -->
 </div>
 </body>

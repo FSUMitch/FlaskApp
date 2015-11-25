@@ -87,8 +87,17 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     <img src="/static/images/SICP_main.jpg" alt="logo"  />
   		<p style="margin-top: 0; font-size: 100%;">&nbsp;</p>
 			<h3><a href="/Student/Search">Search for Companies</a></h3>
-                        <h3><a href="/Student/UploadResume">Upload Your Resume</a></h3>
+                        <h3><a href="/Student/Resume">Upload Your Resume</a></h3>
                         <h3><a href="/Student/View">View Your Applications</a></h3>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for category, message in messages %}
+		  <li class="{{ category }}">{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}	
         </div>
         <div id="body-bottom"></div>
   </div>
