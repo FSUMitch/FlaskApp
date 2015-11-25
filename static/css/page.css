@@ -127,27 +127,9 @@ FORM
 	padding-bottom: 1px;
 }
 
-#body-main-logo, .body-main-logo
-{
-	background-image: url('../images/body_bg.gif');
-	background-repeat: repeat-y;
-	padding: 0 7px 10px 7px;
-	margin: 0;
-	font-size: 75%;
-}
-
-.body-main-logo
-{
-	padding-top: 1px;
-	padding-bottom: 1px;
-}
-
-#body-main-logo img:second-child
-{
-	width: 100%;
-	max-width:50px;
-	height:100%;
-	max-height:50px:
+#img.resize{
+	width:200px;
+	height:200px;
 }
 
 #body-main_list, .body-main_list
