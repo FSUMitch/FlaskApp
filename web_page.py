@@ -12,7 +12,7 @@ import sqlite3
 import database as adb
 import os
 
-from flask import Flask, flash, render_template, request, url_for, redirect, \
+from flask import Flask, flash, send_from_directory, render_template, request, url_for, redirect, \
      g, escape, session
 
 #init stuff
@@ -56,6 +56,11 @@ def choice():
         pass
     
     return render_template('choice.html')
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 #######################
 #####Student pages#####
