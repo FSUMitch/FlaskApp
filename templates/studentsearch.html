@@ -120,7 +120,9 @@ $(document).ready(function()
                           <td id="2">{{  row[2]  }}</td>
                           <td id="3"><a href=" insert link ">{{  row[3]  }}</a></td>
                           <td id="4">{{  row[4]  }}</td>
-                          <td id="5"><form action="/Student/Apply" method="post"><button type="submit" name="internshipid" value="{{ row[5] }}">Apply!</button></form></td>
+                          <td id="5">
+                          <a href="/Student/Apply"><center><button name="internshipid" value="{{ row[5] }}">Apply</button></center></a>
+                          </td>
 
                       </tr>    
                     {% endfor %}
