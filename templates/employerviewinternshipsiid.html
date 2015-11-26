@@ -1,0 +1,140 @@
+
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.cs.fsu.edu/current/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Nov 2015 00:03:19 GMT -->
+<head>
+<title>FSU Computer Science - </title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+	@import "/static/css/global.css";
+	@import "/static/css/page.css";
+</style>
+</head>
+
+<body onload="preloadImages();">
+<div id="main">
+	 
+
+<!-- Begin include (header.php) -->
+<script type="text/javascript" src="/static/script/preload.js"></script>
+
+<div id="header">
+  <div id="cslogo"><a href="http://www.cs.fsu.edu/index.php"><img name="cs_mini" src="/static/images/cs_mini.gif" width="151" height="23" border="0" alt="FSU Computer Science" /></a></div>
+<div id="minilinks"><a href="https://www.cs.fsu.edu/site/help.php">Help</a> | 
+    <a href="https://www.cs.fsu.edu/admin/login.php">Login</a> 
+   | <a href="https://www.cs.fsu.edu/site/contact.php">Contact</a> | <a href="https://www.cs.fsu.edu/site/sitemap.php">Site Map</a></div>
+</div>
+<h1><img src="/static/images/cs.gif" width="760" height="50" alt="FSU Computer Science" /></h1>
+<div>
+  <div id="linksLeft">
+     <div>
+<!-- Begin XML ******************************************************************* -->
+<a href="/SCIP">Home</a> &gt; 
+	<a href="/Employers">Employers</a> &gt;
+	  
+
+<!-- End XML ********************************************************************* -->
+</div>
+  </div>
+  <div id="mainnav">
+   
+<!-- Begin XML ******************************************************************* -->
+<ul>
+  <li>
+    <a href="http://www.cs.fsu.edu/prospective/" onmouseover="changeImages('prospective_link', 'prospective_link-over.gif'); return true;" onmouseout="changeImages('prospective_link', 'prospective_link.gif'); return true;">
+      <img border="0" name="prospective_link" src="/static/images/prospective_link.gif" alt="Prospective Students"/>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.cs.fsu.edu/current/" onmouseover="changeImages('current_link', 'current_link-over.gif'); return true;" onmouseout="changeImages('current_link', 'current_link.gif'); return true;">
+      <img border="0" name="current_link" src="/static/images/current_link.gif" alt="Current Students"/>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.cs.fsu.edu/faculty/" onmouseover="changeImages('faculty_link', 'faculty_link-over.gif'); return true;" onmouseout="changeImages('faculty_link', 'faculty_link.gif'); return true;">
+      <img border="0" name="faculty_link" src="/static/images/faculty_link.gif" alt="People"/>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.cs.fsu.edu/research/" onmouseover="changeImages('research_link', 'research_link-over.gif'); return true;" onmouseout="changeImages('research_link', 'research_link.gif'); return true;">
+      <img border="0" name="research_link" src="/static/images/research_link.gif" alt="Research"/>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.cs.fsu.edu/faculty/alumni/" onmouseover="changeImages('alumni_link', 'alumni_link-over.gif'); return true;" onmouseout="changeImages('alumni_link', 'alumni_link.gif'); return true;">
+      <img border="0" name="alumni_link" src="/static/images/alumni_link.gif" alt="Alumni"/>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.cs.fsu.edu/resources/" onmouseover="changeImages('resources_link', 'resources_link-over.gif'); return true;" onmouseout="changeImages('resources_link', 'resources_link.gif'); return true;">
+      <img border="0" name="resources_link" src="/static/images/resources_link.gif" alt="Resources &amp; Forms"/>
+    </a>
+  </li>
+</ul>
+
+<!-- End XML ********************************************************************* -->
+  </div>
+  <div id="links-right"></div>
+  <div id="links-margin"></div>
+</div>
+<!-- End include -->
+
+<div id="body">
+	<div><img src="/static/images/current.gif" alt="Current Students" /></div>
+ 	<div id="body-main" style="padding-right: 4px;">
+    <img src="/static/images/SICP_main.jpg" alt="logo"  />
+  		<p style="margin-top: 0; font-size: 100%;">&nbsp;</p>
+                    {% for student in students %}
+                        <p>{{student[0]}}</p>
+                        <p>{{student[3]}}</p>
+                    {% endfor %}
+
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for category, message in messages %}
+		  <li class="{{ category }}">{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}		
+	</div>
+		<div id="body-bottom"></div>
+  </div>
+  
+  <!-- SIDEBAR FOR EMPLOYERS -->
+<div id="rcolumn">
+<div class="sidebar"><img src="/static/images/employeelinks.gif" width="190" height="20" alt="Employee Links"/>
+    <div class="sidebar-main">
+        <ul><li><a href="/Employers">SICP Home</a></li>
+        <li><a href="/Employer/ViewInternships">Company Job Listings</a></li>
+        <li><a href="/Employer/AddInternships">Add Internships</a></li>
+        <li><a href="/Employer/EditLogo">Add/Edit Logo</a></li>
+        </ul>
+    </div>
+	<div class="sidebarBottom"> </div>
+</div>
+</div>
+<!-- END OF SIDEBAR -->
+
+	<!-- Begin include (footer.php) ******************************************************** -->
+  <div id="footer">
+    <div id="foot-lcolumn">
+      <a href="http://www.fsu.edu/">FSU Home</a> | 
+      <a href="http://www.fsu.edu/misc/comments.shtml">Comments</a> | 
+      <a href="http://www.fsu.edu/misc/policy.html">Privacy Policy</a> | 
+      <a href="http://www.fsu.edu/misc/copyright.shtml">Copyright</a> | 
+      <a href="https://www.cs.fsu.edu/site/feedback.php?referrer=/current/">Comment or Report a Problem</a>    </div>
+    <div id="foot-rcolumn"><a href="#top">top</a>
+
+    </div>
+  </div>
+<!-- End include *********************************************************************** -->
+</div>
+</body>
+
+<!-- Mirrored from www.cs.fsu.edu/current/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Nov 2015 00:03:35 GMT -->
+</html>

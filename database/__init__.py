@@ -202,6 +202,20 @@ def get_sid(email):
 
     return cid
 
+def check_ci_ids(cid, iid):
+    conn = sqlite3.connect(DBNAME)
+    c = conn.cursor()
+    
+    c.execute("SELECT cid FROM {} WHERE iid={}".format(INTERNSHIPTNAME, iid))
+    data = c.fetchone()
+
+    conn.commit()
+    conn.close()
+    
+    if data[0] == cid:
+        return True
+    else:
+        return False
 ############################
 #def edit_internship(name):#
 ############################

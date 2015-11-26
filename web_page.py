@@ -347,7 +347,31 @@ def employerAddInt():
 
 @app.route('/Employer/ViewInternships')
 def employerViewInt():
+    if escape(session['type']) == 'employer':
+        cid = adb.get_cid(escape(session['uname']))
+
+        internlist = []
+        for r in adb.view_cjoini_t():
+            if r[2] == cid and r[8]:
+                internlist.append(r)
+
+        return render_template('employerviewinternships.html', internlist=internlist)
+
     return 'employer'
+
+@app.route('/Employer/ViewInternships/<iid>')
+def employerViewSpecificInt(iid):
+    if escape(session['type']) == 'employer':
+        cid = adb.get_cid(escape(session['uname']))
+        
+        if adb.check_ci_ids(cid, iid):
+            studs = students_applied(iid)
+
+            return render_template('employerviewinternshipsiid.html', students=studs)
+
+    return 'employer'
+
+#####Non-routing functions#####
 
 def get_db():
     db = getattr(g, '_database', None)
@@ -394,7 +418,6 @@ def reg_employer(name, password, cpassword, email):
 
 
 def reg_student(name, password, cpassword, email):
-
     #return 1 if passwords not equal error
     if password != cpassword:
         return 1
@@ -406,6 +429,14 @@ def reg_student(name, password, cpassword, email):
     else:
         adb.add_student(name, password, email)
         return False
+
+def students_applied(iid):
+    students = []
+    for r in adb.view_student_t():
+        if r[4][int(iid)] == '1':
+            students.append(r)
+
+    return students
 
 def allowed_image(filename):
     return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_IMG_EXT
