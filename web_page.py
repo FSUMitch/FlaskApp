@@ -156,7 +156,7 @@ def studentSearch():
                 return render_template('studentsearch.html')
             else: 
                 return render_template('studentsearch.html',
-                            table=[(i[0], i[4], i[5], "a", "b", i[6]) for i in adb.view_cjoini_t()])
+                            table=[(i[0], i[4], i[5], "a", "b", i[6]) for i in adb.view_cjoini_t() if i[8]])
     except:
         pass
 
@@ -167,11 +167,15 @@ def studentSearch():
 def studentApply(iid):
     if escape(session['type']) == 'student':
         email = escape(session['uname']) #email of logged in student
-        if adb.apply_student(email, iid): #if success, (hasn't already applied)
+        if adb.is_active(iid) and adb.apply_student(email, iid): #if success, (hasn't already applied)
             sid = adb.get_sid(email)
             toemail = adb.get_cemail(iid)
             send_email(sid, iid, toemail, email)
             flash('You have successfully applied to this internship!')
+            return redirect("/Student/Search")
+        
+        elif not adb.is_active(iid):
+            flash('Could not apply to this internship.')
             return redirect("/Student/Search")
         else: #student has already applied
             flash('You have already applied to this internship!', 'error')
@@ -369,11 +373,58 @@ def employerViewSpecificInt(iid):
         
         if adb.check_ci_ids(cid, iid):
             studs = students_applied(iid)
+            sname, iname = adb.get_name(iid=iid)
 
-            return render_template('employerviewinternshipsiid.html', students=studs, iid=iid)
+            return render_template('employerviewinternshipsiid.html', students=studs, iid=iid, posname=iname)
 
-    return 'employer'
+    return redirect('/Employer')
 
+@app.route('/Employer/ViewInternships/ChangeDescription/<iid>', methods=['POST', 'GET'])
+def employerChangeDescription(iid):
+    if escape(session['type']) == 'employer':
+        cid = adb.get_cid(escape(session['uname']))
+
+        if adb.check_ci_ids(cid, iid):
+            if request.method == 'GET':
+                if os.path.isfile(os.path.join(app.config['DESC_FOLDER'],
+                                                  "desc{}.txt".format(iid))):
+                    txtfile = open(os.path.join(app.config['DESC_FOLDER'],
+                                              "desc{}.txt".format(iid)))
+                    
+                    return render_template('employereditdescription.html',
+                                           txt=txtfile.read())
+                else:
+                    return render_template('employeradddescription.html')
+
+
+            if request.method == 'POST':
+                #use the logged in uname(email) and position name
+                #to create position in db module 
+                txtfile = request.files['txt_file']
+                if txtfile and allowed_text(txtfile.filename):
+                    fname = "desc{}.{}".format(iid, 'txt')
+                    txtfile.save(os.path.join(app.config['DESC_FOLDER'],
+                                              fname))
+                    flash("Successfully added your description!")
+                    return redirect('/Employer/ViewInternships')
+
+                else:
+                    flash("Could not add your description.")
+                    return redirect('/Employer/ViewInternships')
+
+    return redirect('/Employer')
+
+@app.route('/Employer/ViewInternships/Delete/<iid>')
+def employerDeleteInt(iid):
+    if escape(session['type']) == 'employer':
+        cid = adb.get_cid(escape(session['uname']))
+        
+        if adb.check_ci_ids(cid, iid) and adb.int_isactive(iid):
+            adb.int_makeinactive(iid)
+            flash("Deleted your internship.")
+            return redirect('/Employer/ViewInternships')
+
+    return redirect('/Employer')
 #####Non-routing functions#####
 
 def get_db():

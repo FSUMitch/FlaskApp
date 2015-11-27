@@ -229,17 +229,23 @@ def check_ci_ids(cid, iid):
     else:
         return False
 
-def get_name(sid, iid):
+def get_name(sid = None, iid=None):
     conn = sqlite3.connect(DBNAME)
     c = conn.cursor()
-
-    c.execute("SELECT name FROM {} WHERE sid={}".format(STUDENTTNAME, sid))
-    data = c.fetchone()
-    sname = data[0]
-
-    c.execute("SELECT name FROM {} WHERE iid={}".format(INTERNSHIPTNAME, iid))
-    data = c.fetchone()
-    iname = data[0]
+    sname, iname = None, None
+    try:
+        c.execute("SELECT name FROM {} WHERE sid={}".format(STUDENTTNAME, sid))
+        data = c.fetchone()
+        sname = data[0]
+    except:
+        pass
+    
+    try:
+        c.execute("SELECT name FROM {} WHERE iid={}".format(INTERNSHIPTNAME, iid))
+        data = c.fetchone()
+        iname = data[0]
+    except:
+        pass
 
     conn.commit()
     conn.close()
@@ -274,6 +280,27 @@ def apply_student(email, iid):
     conn.commit()
     conn.close()
     return True
+
+def int_isactive(iid):
+    iid = int(iid)
+    
+    conn = sqlite3.connect(DBNAME)
+    c = conn.cursor()
+
+    c.execute('SELECT active FROM {} WHERE iid={}'.format(INTERNSHIPTNAME, iid))
+    data = c.fetchone()
+
+    return data[0]
+
+def int_makeinactive(iid):
+    iid = int(iid)
+    
+    conn = sqlite3.connect(DBNAME)
+    c = conn.cursor()
+    c.execute('UPDATE {} SET active=0, name="", iid=-1, WHERE iid={}'.format(INTERNSHIPTNAME, iid))
+
+    conn.commit()
+    conn.close()
 
 ########################################
 ##########VIEW TABLE FUNCTIONS##########
