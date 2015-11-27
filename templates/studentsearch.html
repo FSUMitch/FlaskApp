@@ -114,7 +114,7 @@ $(document).ready(function()
                         <th>Application Link</th>
 					  </thead></tr>
                     {% for row in table %}
-                      <tr>
+                      <tbody><tr>
                           <td id="0">{{  row[0]  }}</td>
                           <td id="1">{{  row[1]  }}</td>
                           <td id="2">{{  row[2]  }}</td>
@@ -132,7 +132,7 @@ $(document).ready(function()
                 
 				{% with messages = get_flashed_messages(with_categories=true) %}
 				  {% if messages %}
-					<ul class=flashes>
+					<ul class="flashes">
 					{% for category, message in messages %}
 					  <li class="{{ category }}">{{ message }}</li>
 					{% endfor %}
