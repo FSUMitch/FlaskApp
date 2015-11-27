@@ -11,6 +11,9 @@
 import sqlite3
 import database as adb
 import os
+import smtplib
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEText import MIMEText
 
 from flask import Flask, flash, render_template, request, url_for, redirect, \
      g, escape, session, send_from_directory
@@ -65,7 +68,7 @@ def choice():
             return redirect('/Employer/Home')
     except:
         pass
-    
+
     return render_template('choice.html')
 
 #######################
@@ -160,20 +163,20 @@ def studentSearch():
     
     return redirect('/Students')
 
-@app.route('/Student/Apply', methods=['POST'])
-def studentApply():
+@app.route('/Student/Apply/<iid>')
+def studentApply(iid):
     if escape(session['type']) == 'student':
         email = escape(session['uname']) #email of logged in student
-        iid   = request.form['internshipid']
-        
         if adb.apply_student(email, iid): #if success, (hasn't already applied)
+            sid = adb.get_sid(email)
+            toemail = adb.get_cemail(iid)
+            send_email(sid, iid, toemail, email)
             flash('You have successfully applied to this internship!')
             return redirect("/Student/Search")
         else: #student has already applied
             flash('You have already applied to this internship!', 'error')
             return redirect("/Student/Search")
 
-    
     return escape(session['type'])
 
 @app.route('/Student/Resume', methods=['GET', 'POST'])
@@ -367,7 +370,7 @@ def employerViewSpecificInt(iid):
         if adb.check_ci_ids(cid, iid):
             studs = students_applied(iid)
 
-            return render_template('employerviewinternshipsiid.html', students=studs)
+            return render_template('employerviewinternshipsiid.html', students=studs, iid=iid)
 
     return 'employer'
 
@@ -443,6 +446,33 @@ def allowed_image(filename):
 
 def allowed_text(filename):
     return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_TXT_EXT
+
+def send_email(sid, iid, to, cc,
+               smtpserver='smtp.gmail.com:587'):
+    from_addr = "sicp.ad.2015@gmail.com"
+    login = "sicp.ad.2015@gmail.com"
+    password = "asdfq3495"
+    subject = "SICP Application Received"
+    to = "sicp.ad.2015@gmail.com"
+
+    sname, iname = adb.get_name(sid, iid)
+    message = """Hello,\nAn applicant, {}, has applied to your position {}. Please review this application on your home page.\n\nThank you,\nSICP Administration""".format(sname, iname)
+
+    msg = MIMEMultipart()
+    msg['From'] = from_addr
+    msg['To'] = to
+    msg['Subject'] = subject
+
+    msg.attach(MIMEText(message, 'plain'))
+
+    server = smtplib.SMTP(smtpserver)
+    server.ehlo()
+    server.starttls()
+    server.ehlo()
+    server.login(login, password)
+    text = msg.as_string()
+    problems = server.sendmail(from_addr, to, text)
+    server.quit()
 
 ####################################################
 ###########UTILITY DEBUGGING FUNCTIONS##############

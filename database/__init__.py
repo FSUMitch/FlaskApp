@@ -202,6 +202,18 @@ def get_sid(email):
 
     return cid
 
+def get_cemail(iid):
+    conn = sqlite3.connect(DBNAME)
+    c = conn.cursor()
+    
+    c.execute('SELECT email FROM {} as C JOIN {} as I ON C.cid = I.cid'.format(COMPANYTNAME, INTERNSHIPTNAME))
+    data = c.fetchone()
+
+    conn.commit()
+    conn.close()
+
+    return data[0]
+
 def check_ci_ids(cid, iid):
     conn = sqlite3.connect(DBNAME)
     c = conn.cursor()
@@ -216,9 +228,23 @@ def check_ci_ids(cid, iid):
         return True
     else:
         return False
-############################
-#def edit_internship(name):#
-############################
+
+def get_name(sid, iid):
+    conn = sqlite3.connect(DBNAME)
+    c = conn.cursor()
+
+    c.execute("SELECT name FROM {} WHERE sid={}".format(STUDENTTNAME, sid))
+    data = c.fetchone()
+    sname = data[0]
+
+    c.execute("SELECT name FROM {} WHERE iid={}".format(INTERNSHIPTNAME, iid))
+    data = c.fetchone()
+    iname = data[0]
+
+    conn.commit()
+    conn.close()
+
+    return sname, iname
 
 def apply_student(email, iid):
     """Applies student, works directly with database"""

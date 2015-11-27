@@ -92,15 +92,9 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                         <p>{{student[3]}}</p>
                     {% endfor %}
 
-	{% with messages = get_flashed_messages(with_categories=true) %}
-	  {% if messages %}
-		<ul class=flashes>
-		{% for category, message in messages %}
-		  <li class="{{ category }}">{{ message }}</li>
-		{% endfor %}
-		</ul>
-	  {% endif %}
-	{% endwith %}		
+                <br />
+                <a href="ChangeDescription/{{iid}}">Change this internship's description</a>
+                <a href="Delete/{{iid}}">Remove this internship</a>		
 	</div>
 		<div id="body-bottom"></div>
   </div>
