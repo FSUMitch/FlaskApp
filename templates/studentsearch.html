@@ -45,7 +45,7 @@ $(document).ready(function()
   <div id="linksLeft">
      <div>
 <!-- Begin XML ******************************************************************* -->
-<a href="/SCIP">Home</a> &gt; 
+<a href="/">Home</a> &gt; 
 	<a href="/Student/Home">Student</a> &gt;
    	<a href="/Student/Search">Search</a> &gt;
 	  
@@ -99,11 +99,12 @@ $(document).ready(function()
 <div id="body_list">
 	<div><img src="/static/images/blank_list.gif" alt="Current Students" /></div>
  	<div id="body-main_list" style="padding-right: 4px; padding-left:">
-    <img src="/static/images/SICP_main.jpg" alt="logo"  />
+    <img src="/static/images/sicp_main.jpg" alt="logo"  />
     
   		<p style="margin-top: 0; font-size: 100%;">&nbsp;</p>
         
         <!--Beginning of the Table -->
+        <center>
 			<table id="job_list" class="tablesorter">
 					  <tr><thead>
 						<th>Company Name</th>
@@ -111,9 +112,9 @@ $(document).ready(function()
                         <th>Internship Position</th>
                         <th>Company Logo</th>
                         <th>Application Link</th>
-					  </thead></tr><tbody>
+					  </thead></tr>
                     {% for row in table %}
-                      <tr>
+                      <tbody><tr>
                           <td id="0">{{  row[0]  }}</td>
                           <td id="1">{{  row[1]  }}</td>
                           {% if row[4] %}
@@ -134,11 +135,12 @@ $(document).ready(function()
                     {% endfor %}
                     </tbody>
                 </table>
+                </center>
                 <!--End of the Table -->
                 
 				{% with messages = get_flashed_messages(with_categories=true) %}
 				  {% if messages %}
-					<ul class=flashes>
+					<ul class="flashes">
 					{% for category, message in messages %}
 					  <li class="{{ category }}">{{ message }}</li>
 					{% endfor %}
