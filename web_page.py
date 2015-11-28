@@ -64,7 +64,7 @@ def main():
     app.logger.debug('Main page accessed')
     return render_template('index.html')
 
-@app.route('/SCIP')
+@app.route('/SICP')
 def choice():
     app.logger.debug('Main page accessed')
 
@@ -77,6 +77,10 @@ def choice():
         pass
 
     return render_template('choice.html')
+
+@app.route('/SCIP')
+def fix():
+    return redirect('/SICP')
 
 @app.route('/logout')
 def logout():
