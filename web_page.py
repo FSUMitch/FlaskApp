@@ -17,6 +17,7 @@ from email.MIMEText import MIMEText
 
 from flask import Flask, flash, render_template, request, url_for, redirect, \
      g, escape, session, send_from_directory
+from werkzeug import secure_filename
 
 #init stuff
 DATABASE = 'SCIP.db'
@@ -33,6 +34,7 @@ app.config['LOGO_FOLDER'] = LOGO_FOLDER
 app.config['LOGO_ACCESS'] = r'/static/images/'
 app.config['DESC_FOLDER'] = DESC_FOLDER
 app.config['RESUME_FOLDER'] = RESUME_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 6 * 1024 #limit for image files
 app.secret_key = "asdfq3495basdfbsdpo2451"
 
 
@@ -47,8 +49,13 @@ def favicon():
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route('/uploads/<path:filename>')
-def download_file(filename):
+def fileResume(filename):
     return send_from_directory(app.config['RESUME_FOLDER'],
+                               filename)
+
+@app.route('/descriptions/<path:filename>')
+def fileDesc(filename):
+    return send_from_directory(app.config['DESC_FOLDER'],
                                filename)
 
 @app.route('/')
@@ -71,6 +78,11 @@ def choice():
 
     return render_template('choice.html')
 
+@app.route('/logout')
+def logout():
+    session.clear()
+    
+    return redirect('SCIP')
 #######################
 #####Student pages#####
 #######################
@@ -150,15 +162,15 @@ def studentHome():
 
 @app.route('/Student/Search', methods=['GET', 'POST'])
 def studentSearch():
-    try:
-        if escape(session['type']) == 'student':
-            if request.method == 'POST':#once we have search fields
-                return render_template('studentsearch.html')
-            else: 
-                return render_template('studentsearch.html',
-                            table=[(i[0], i[4], i[5], "a", "b", i[6]) for i in adb.view_cjoini_t() if i[8]])
-    except:
-        pass
+    if escape(session['type']) == 'student':
+        table=[(i[0], i[4], i[5], i[6], os.path.isfile(os.path.join(app.config['DESC_FOLDER'],
+                                                  "desc{}.txt".format(i[6]))), is_imgfile(i[2]), i[2]) for i in adb.view_cjoini_t() if i[8]]
+        if request.method == 'POST':#once we have search fields
+            return render_template('studentsearch.html')
+        else: 
+            return render_template('studentsearch.html',
+                        table=table,
+                        desc=True)
 
     
     return redirect('/Students')
@@ -222,7 +234,13 @@ def studentViewApps():
         
         sid = adb.get_sid(escape(session['uname']))
         jobs = adb.get_jobs(sid)
-        return render_template('studentview.html', table=[(i[0], i[4], i[5], "a", "b") for i in jobs])
+
+        table=[(i[0], i[4], i[5], i[6],
+                os.path.isfile(os.path.join(app.config['DESC_FOLDER'],
+                               "desc{}.txt".format(i[6]))),
+                is_imgfile(i[2]), i[2]) for i in jobs if i[8]]
+
+        return render_template('studentview.html', table=table)
 
     return redirect('/Student')
         
@@ -368,8 +386,6 @@ def employerViewInt():
     if escape(session['type']) == 'employer':
         sid = request.args.get('sid')
         iid = request.args.get('iid')
-        
-
                 
         cid = adb.get_cid(escape(session['uname']))
         if sid and iid:
@@ -473,6 +489,19 @@ def log_employer_in(username):
 
 def log_student_in(username):
     return redirect('/Student/Home')
+
+def is_txtfile(txtfile):
+    pass
+
+def is_imgfile(iid):
+    jpg = os.path.isfile(os.path.join(app.config['LOGO_FOLDER'],
+                               "logo{}.jpg".format(iid)))
+    png = os.path.isfile(os.path.join(app.config['LOGO_FOLDER'],
+                               "logo{}.png".format(iid)))
+    gif = os.path.isfile(os.path.join(app.config['LOGO_FOLDER'],
+                               "logo{}.gif".format(iid)))
+
+    return jpg or png or gif
 
 #need to check if email is a possible valid email
 #need to have some checks on arguments

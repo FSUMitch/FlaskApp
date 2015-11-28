@@ -109,7 +109,6 @@ $(document).ready(function()
 						<th>Company Name</th>
 						<th>Company E-mail</th>
                         <th>Internship Position</th>
-                        <th>Internship Description</th>
                         <th>Company Logo</th>
                         <th>Application Link</th>
 					  </thead></tr><tbody>
@@ -117,11 +116,18 @@ $(document).ready(function()
                       <tr>
                           <td id="0">{{  row[0]  }}</td>
                           <td id="1">{{  row[1]  }}</td>
-                          <td id="2">{{  row[2]  }}</td>
-                          <td id="3"><a href=" insert link ">{{  row[3]  }}</a></td>
-                          <td id="4">{{  row[4]  }}</td>
-                          <td id="5">
-                          <a href="/Student/Apply/{{row[5]}}"><center><button name="internshipid" value="{{ row[5] }}">Apply</button></center></a>
+                          {% if row[4] %}
+                          <td id="2"><a href="/descriptions/desc{{row[3]}}.txt">{{  row[2]  }}</a></td>
+                          {% else %}
+                          <td id="2">{{  row[2]  }}</a></td>
+                          {% endif %}
+                          {% if row[5] %}
+                          <td id="3"><img src="/static/images/logo{{row[6]}}.jpg"/></td>
+                          {% else %}
+                          <td id="3">N/A</td>
+                          {% endif %}
+                          <td id="4">
+                          <a href="/Student/Apply/{{row[3]}}"><center><button name="internshipid" value="{{ row[5] }}">Apply</button></center></a>
                           </td>
 
                       </tr>    

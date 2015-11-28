@@ -393,4 +393,3 @@ def view_cjoini_t():
 
     conn.commit()
     conn.close()
-
