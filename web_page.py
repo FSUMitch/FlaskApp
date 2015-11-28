@@ -167,14 +167,14 @@ def studentSearch():
 def studentApply(iid):
     if escape(session['type']) == 'student':
         email = escape(session['uname']) #email of logged in student
-        if adb.is_active(iid) and adb.apply_student(email, iid): #if success, (hasn't already applied)
+        if adb.int_isactive(iid) and adb.apply_student(email, iid): #if success, (hasn't already applied)
             sid = adb.get_sid(email)
             toemail = adb.get_cemail(iid)
             send_email(sid, iid, toemail, email)
             flash('You have successfully applied to this internship!')
             return redirect("/Student/Search")
-        
-        elif not adb.is_active(iid):
+
+        elif not adb.int_isactive(iid):
             flash('Could not apply to this internship.')
             return redirect("/Student/Search")
         else: #student has already applied
@@ -213,8 +213,19 @@ def studentResume():
                 flash("Could not add your resume")
                 return redirect('/Student/Home')
 
-    return request.method + ' student'
+    return redirect('/Student')
 
+@app.route('/Student/View')
+def studentViewApps():
+    if escape(session['type']) == 'student':
+        email = escape(session['uname']) #email of logged in student
+        
+        sid = adb.get_sid(escape(session['uname']))
+        jobs = adb.get_jobs(sid)
+        return render_template('studentview.html', table=[(i[0], i[4], i[5], "a", "b") for i in jobs])
+
+    return redirect('/Student')
+        
 ########################
 #####Employee pages#####
 ########################
@@ -355,7 +366,17 @@ def employerAddInt():
 @app.route('/Employer/ViewInternships')
 def employerViewInt():
     if escape(session['type']) == 'employer':
+        sid = request.args.get('sid')
+        iid = request.args.get('iid')
+        
+
+                
         cid = adb.get_cid(escape(session['uname']))
+        if sid and iid:
+            if adb.check_ci_ids(cid, iid):
+                adb.student_seen(sid, iid)
+                flash('Student has been removed.')
+                return redirect('/Employer/ViewInternships/{}'.format(iid))
 
         internlist = []
         for r in adb.view_cjoini_t():
@@ -370,7 +391,7 @@ def employerViewInt():
 def employerViewSpecificInt(iid):
     if escape(session['type']) == 'employer':
         cid = adb.get_cid(escape(session['uname']))
-        
+
         if adb.check_ci_ids(cid, iid):
             studs = students_applied(iid)
             sname, iname = adb.get_name(iid=iid)

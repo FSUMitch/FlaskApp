@@ -302,6 +302,41 @@ def int_makeinactive(iid):
     conn.commit()
     conn.close()
 
+def student_seen(sid, iid):
+    iid = int(iid)
+    conn = sqlite3.connect(DBNAME)
+    c = conn.cursor()
+
+    c.execute('SELECT intarray FROM {} WHERE sid={}'.format(STUDENTTNAME, sid))
+    data = c.fetchone()
+
+    arr = data[0]
+    arr = arr[0:iid] + "2" + arr[iid+1:len(arr)]
+    c.execute('UPDATE {} SET intarray={} WHERE sid={}'.format(STUDENTTNAME, str(arr), sid))
+
+    conn.commit()
+    conn.close()
+
+def get_jobs(sid):
+    conn = sqlite3.connect(DBNAME)
+    c = conn.cursor()
+
+    c.execute('SELECT intarray FROM {} WHERE sid={}'.format(STUDENTTNAME, sid))
+    data = c.fetchone()
+    arr = data[0]
+
+    jobindices = []
+    for i, c in enumerate(arr):
+        if c == '1' or c == '2':
+            jobindices.append(i)
+
+    jobs = []
+    for e in view_cjoini_t():
+        if e[6] in jobindices:
+            jobs.append(e)
+
+    return jobs
+
 ########################################
 ##########VIEW TABLE FUNCTIONS##########
 ########################################
