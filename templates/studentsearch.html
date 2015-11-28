@@ -104,6 +104,7 @@ $(document).ready(function()
   		<p style="margin-top: 0; font-size: 100%;">&nbsp;</p>
         
         <!--Beginning of the Table -->
+        <center>
 			<table id="job_list" class="tablesorter">
 					  <tr><thead>
 						<th>Company Name</th>
@@ -128,6 +129,7 @@ $(document).ready(function()
                     {% endfor %}
                     </tbody>
                 </table>
+                </center>
                 <!--End of the Table -->
                 
 				{% with messages = get_flashed_messages(with_categories=true) %}
