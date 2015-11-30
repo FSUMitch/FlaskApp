@@ -18,12 +18,11 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <script type="text/javascript" src="jquery.tablesorter/jquery.tablesorter.js"></script> 
 <script type="text/javascript" src="jquery.tablesorter/jquery.tablesorter.min.js"></script> 
 <script type="text/javascript">
-$(document).ready(function() 
-    { 
-        $("#job_list").tablesorter(); 
-    } 
-); 
+setTimeout(function(){
+	 $("#job_list").tablesorter()
+}, 5000);
 </script>
+
 </head>
 
 <body onload="preloadImages();">
