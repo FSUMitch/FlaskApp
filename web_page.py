@@ -79,6 +79,10 @@ def fixE():
 def fixS():
     return redirect('/Students')
 
+@app.route('/Student/MyApplications')
+def fixJ():
+    return redirect('/Students/View')
+
 @app.route('/logout')
 def logout():
     session.clear()
