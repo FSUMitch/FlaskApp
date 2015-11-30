@@ -23,9 +23,9 @@ from werkzeug import secure_filename
 DATABASE = 'SCIP.db'
 PORT = 5003
 DEBUG = True
-LOGO_FOLDER = r'.\static\images'
-DESC_FOLDER = r'.\database\descs'
-RESUME_FOLDER = r'.\database\resumes'
+LOGO_FOLDER = r'./static/images'
+DESC_FOLDER = r'./database/descs'
+RESUME_FOLDER = r'./database/resumes'
 ALLOWED_IMG_EXT = set(['png', 'jpg', 'jpeg', 'gif'])
 ALLOWED_TXT_EXT = set(['txt', 'doc', 'docx'])
 
@@ -60,7 +60,6 @@ def fileDesc(filename):
 
 @app.route('/')
 def main():
-    session.clear()
     app.logger.debug('Main page accessed')
     return render_template('index.html')
 
@@ -166,7 +165,7 @@ def studentHome():
 
 @app.route('/Student/Search', methods=['GET', 'POST'])
 def studentSearch():
-    if escape(session['type']) == 'student':
+    if escape(session.get('type')) == 'student':
         table=[(i[0], i[4], i[5], i[6], os.path.isfile(os.path.join(app.config['DESC_FOLDER'],
                                                   "desc{}.txt".format(i[6]))), is_imgfile(i[2]), i[2]) for i in adb.view_cjoini_t() if i[8]]
         if request.method == 'POST':#once we have search fields

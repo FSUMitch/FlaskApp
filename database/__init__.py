@@ -270,7 +270,7 @@ def apply_student(email, iid):
         arr = str(arr)
         
     if arr[iid] == '0':
-        arr = arr[0:iid] + "1" + arr[iid+1:len(arr)]
+        arr = str(arr[0:iid] + "1" + arr[iid+1:len(arr)])
         c.execute('UPDATE {} SET intarray={} WHERE sid={}'.format(STUDENTTNAME, str(arr), sid))
     else:
         conn.commit()
