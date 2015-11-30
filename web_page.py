@@ -1,13 +1,3 @@
-"""
-    WISHLIST:
-        IMMEDIATE:
-            Upload files
-        NOT:
-            Change Current Students redirect
-            Implement 'remember me' (not forgot your password?)
-            Admin Account?
-"""
-
 import sqlite3
 import database as adb
 import os
@@ -311,6 +301,18 @@ def employerRegister():
         if not flag: #log in not implemented
             session['uname'] = request.form['email']
             session['type']  = "employer"
+            
+            imgfile = request.files['img_file']
+            if imgfile and allowed_image(imgfile.filename):
+                cid = adb.get_cid(escape(session['uname']))
+                fname = "logo{}.{}".format(cid, 'jpg')
+                imgfile.save(os.path.join(app.config['LOGO_FOLDER'],
+                                          fname))
+                flash("Successfully added your logo!")
+
+            else:
+                flash("Could not add logo")
+                
             return log_employer_in('email')
         elif flag == 1:
             error = 'Invalid username/password'
@@ -374,7 +376,7 @@ def employerAddInt():
                 iid = adb.add_internship(session['uname'], request.form['posname'])
                 txtfile = request.files['txt_file']
                 if txtfile and allowed_text(txtfile.filename):
-                    fname = "description{}.{}".format(iid, "txt")
+                    fname = "desc{}.{}".format(iid, "txt")
                     txtfile.save(os.path.join(app.config['DESC_FOLDER'],
                                               fname))
                     flash("Successfully added your internship!")
