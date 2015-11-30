@@ -23,9 +23,9 @@ from werkzeug import secure_filename
 DATABASE = 'SCIP.db'
 PORT = 5003
 DEBUG = True
-LOGO_FOLDER = r'./static/images'
-DESC_FOLDER = r'./database/descs'
-RESUME_FOLDER = r'./database/resumes'
+LOGO_FOLDER = r'./static/images/'
+DESC_FOLDER = r'./database/descs/'
+RESUME_FOLDER = r'./database/resumes/'
 ALLOWED_IMG_EXT = set(['png', 'jpg', 'jpeg', 'gif'])
 ALLOWED_TXT_EXT = set(['txt', 'doc', 'docx'])
 
@@ -34,7 +34,7 @@ app.config['LOGO_FOLDER'] = LOGO_FOLDER
 app.config['LOGO_ACCESS'] = r'/static/images/'
 app.config['DESC_FOLDER'] = DESC_FOLDER
 app.config['RESUME_FOLDER'] = RESUME_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 6 * 1024 #limit for image files
+app.config['MAX_CONTENT_LENGTH'] = 30 * 1024 #limit for image files
 app.secret_key = "asdfq3495basdfbsdpo2451"
 
 
@@ -80,6 +80,14 @@ def choice():
 @app.route('/SCIP')
 def fix():
     return redirect('/SICP')
+
+@app.route('/Employer')
+def fixE():
+    return redirect('Employers')
+
+@app.route('/Student')
+def fixS():
+    return redirect('/Students')
 
 @app.route('/logout')
 def logout():
