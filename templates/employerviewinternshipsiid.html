@@ -101,8 +101,9 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                     {% for student in students %}
                         <p>{{student[0]}}</p>
                         <p>{{student[3]}}</p>
-                        <a href="/uploads/resume{{student[2]}}.txt">Link to this resume</a>
-                        <a href="/Employer/ViewInternships?iid={{iid}}&sid={{student[2]}}">Remove this student</a>
+                        <a href="/uploads/resume{{student[2]}}.txt">Link to this resume</a><br />
+                        <a href="/Employer/ViewInternships?iid={{iid}}&sid={{student[2]}}">Accept</a><br />
+                        <a href="/Employer/ViewInternships?iid={{iid}}&sid={{student[2]}}">Remove</a>
                         <br />
                     {% endfor %}
 
