@@ -11,14 +11,13 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <style type="text/css">
 	@import "/static/css/global.css";
 	@import "/static/css/page.css";
-
-
+	@import "jquery.tablesorter/themes/blue/style.css";
 </style>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript" src="/src/tablesorter/jquery-latest.js"></script> 
-<script type="text/javascript" src="/src/tablesorter/jquery.tablesorter.js"></script> 
-<script type="text/javascript">
 
+<script type="text/javascript" src="jquery.tablesorter/jquery-latest.js"></script> 
+<script type="text/javascript" src="jquery.tablesorter/jquery.tablesorter.js"></script> 
+<script type="text/javascript" src="jquery.tablesorter/jquery.tablesorter.min.js"></script> 
+<script type="text/javascript">
 $(document).ready(function() 
     { 
         $("#job_list").tablesorter(); 
@@ -29,33 +28,39 @@ $(document).ready(function()
 
 <body onload="preloadImages();">
 <div id="main">
-	 
-
-<!-- Begin include (header.php) -->
+	<!-- BEGIN HEADER -->
 <script type="text/javascript" src="/static/script/preload.js"></script>
 
 <div id="header">
-  <div id="cslogo"><a href="http://www.cs.fsu.edu/index.php"><img name="cs_mini" src="/static/images/cs_mini.gif" width="151" height="23" border="0" alt="FSU Computer Science" /></a></div>
-<div id="minilinks"><a href="https://www.cs.fsu.edu/site/help.php">Help</a> | 
-    <a href="https://www.cs.fsu.edu/admin/login.php">Login</a> 
-   | <a href="https://www.cs.fsu.edu/site/contact.php">Contact</a> | <a href="https://www.cs.fsu.edu/site/sitemap.php">Site Map</a></div>
+  <div id="cslogo">
+  	<a href="http://www.cs.fsu.edu/index.php">
+    <img name="cs_mini" src="/static/images/cs_mini.gif" width="151" height="23" border="0" alt="FSU Computer Science" /></a>
+  </div>
+  <div id="minilinks">
+	<a href="https://www.cs.fsu.edu/site/help.php">Help</a>
+     | <a href="https://www.cs.fsu.edu/admin/login.php">Login</a> 
+   	 | <a href="https://www.cs.fsu.edu/site/contact.php">Contact</a>
+     | <a href="https://www.cs.fsu.edu/site/sitemap.php">Site Map</a>
+  </div>
 </div>
+
 <h1><img src="/static/images/cs.gif" width="760" height="50" alt="FSU Computer Science" /></h1>
+<!-- END HEADER -->
 <div>
+<!-- BEGIN LEFT LINKS -->
+
   <div id="linksLeft">
      <div>
-<!-- Begin XML ******************************************************************* -->
-<a href="/">Home</a> &gt; 
-	<a href="/Student/Home">Student</a> &gt;
-   	<a href="/Student/Search">Search</a> &gt;
-	  
-
-<!-- End XML ********************************************************************* -->
-</div>
+        <a href="/Student/Home">Home</a> &gt; 
+		<a href="/Student/Search">Search</a> &gt;
+    </div>
   </div>
+  <!-- END LEFT LINKS -->
+
+
+<!-- BEGIN MAIN NAV BAR -->
+
   <div id="mainnav">
-   
-<!-- Begin XML ******************************************************************* -->
 <ul>
   <li>
     <a href="http://www.cs.fsu.edu/prospective/" onmouseover="changeImages('prospective_link', 'prospective_link-over.gif'); return true;" onmouseout="changeImages('prospective_link', 'prospective_link.gif'); return true;">
@@ -88,13 +93,14 @@ $(document).ready(function()
     </a>
   </li>
 </ul>
-
-<!-- End XML ********************************************************************* -->
   </div>
+  <!-- END MAIN NAV BAR -->
+
   <div id="links-right"></div>
   <div id="links-margin"></div>
 </div>
-<!-- End include -->
+
+<!-- START BODY -->
 
 <div id="body_list">
 	<div><img src="/static/images/blank_list.gif" alt="Current Students" /></div>
@@ -152,29 +158,22 @@ $(document).ready(function()
         </div>
         <div id="body-bottom_list"></div>
   </div>
-
-	
-		
-<!-- Begin XML ******************************************************************* -->
-
-
-<!-- End XML ********************************************************************* -->
-	
-	<!-- Begin include (footer.php) ******************************************************** -->
+ 	<!-- END BODY -->
+    
+<!-- BEGIN FOOTER -->
   <div id="footer">
     <div id="foot-lcolumn">
       <a href="http://www.fsu.edu/">FSU Home</a> | 
       <a href="http://www.fsu.edu/misc/comments.shtml">Comments</a> | 
       <a href="http://www.fsu.edu/misc/policy.html">Privacy Policy</a> | 
       <a href="http://www.fsu.edu/misc/copyright.shtml">Copyright</a> | 
-      <a href="https://www.cs.fsu.edu/site/feedback.php?referrer=/current/">Comment or Report a Problem</a>    </div>
+      <a href="https://www.cs.fsu.edu/site/feedback.php?referrer=/current/">Comment or Report a Problem</a>
+      </div>
     <div id="foot-rcolumn"><a href="#top">top</a>
-
     </div>
-  </div>
-<!-- End include *********************************************************************** -->
+<!-- END FOOTER -->
+</div>
 </div>
 </body>
-
 <!-- Mirrored from www.cs.fsu.edu/current/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Nov 2015 00:03:35 GMT -->
 </html>

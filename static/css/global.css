@@ -37,14 +37,6 @@ UL LI
 }
 
 
-/*
-OL LI
-{
-	background: none;
-	padding: 0;
-}
-*/
-
 /* IE ONLY!! 
    Fixed ALL the problems with differing spacing between IE and Firefox 
    
@@ -57,11 +49,6 @@ OL LI
 	margin: 0;
 }
 
-P
-{
-/*	margin: 0;
-	padding: 0;*/
-}
 
 H2, H3, H4, H5, H6, H7
 {
@@ -266,12 +253,6 @@ UL.floatingList
 	padding: 8px 10px 10px 10px;
 	margin-right: 8px;
 }
-
-/*UL.floatingList LI
-{
-	padding-bottom: 2px;
-}
-*/
 
 /* little icons */
 .pdf
