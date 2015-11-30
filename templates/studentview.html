@@ -13,22 +13,22 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	@import "jquery.tablesorter/themes/blue/style.css";
 </style>
 
-<script type="text/javascript" src="jquery.tablesorter/jquery-latest.js"></script> 
-<script type="text/javascript" src="jquery.tablesorter/jquery.tablesorter.js"></script> 
-<script type="text/javascript" src="jquery.tablesorter/jquery.tablesorter.min.js"></script> 
+<script type="text/javascript" src="jquery.tablesorter/jquery-latest.js"></script>
+<script type="text/javascript" src="jquery.tablesorter/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="jquery.tablesorter/jquery.tablesorter.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function() 
-    { 
-        $("#job_list").tablesorter(); 
-    } 
-); 
+$(document).ready(function()
+    {
+        $("#job_list").tablesorter();
+    }
+);
 </script>
 
 </head>
 
 <body onload="preloadImages();">
 <div id="main">
-	 
+
 <!-- BEGIN HEADER -->
 <script type="text/javascript" src="/static/script/preload.js"></script>
 
@@ -39,7 +39,7 @@ $(document).ready(function()
   </div>
   <div id="minilinks">
 	<a href="https://www.cs.fsu.edu/site/help.php">Help</a>
-     | <a href="https://www.cs.fsu.edu/admin/login.php">Login</a> 
+     | <a href="https://www.cs.fsu.edu/admin/login.php">Login</a>
    	 | <a href="https://www.cs.fsu.edu/site/contact.php">Contact</a>
      | <a href="https://www.cs.fsu.edu/site/sitemap.php">Site Map</a>
   </div>
@@ -52,7 +52,7 @@ $(document).ready(function()
 
   <div id="linksLeft">
      <div>
-        <a href="/Student/Home">Home</a> &gt; 
+        <a href="/Student/Home">Home</a> &gt;
 		<a href="/Student/Search">Search</a> &gt;
     </div>
   </div>
@@ -106,9 +106,9 @@ $(document).ready(function()
 	<div><img src="/static/images/blank_list.gif" alt="Current Students" /></div>
  	<div id="body-main_list" style="padding-right: 4px; padding-left:">
     <img src="/static/images/SICP_main.jpg" alt="logo"  />
-    
+
   		<p style="margin-top: 0; font-size: 100%;">&nbsp;</p>
-        
+
         <!--Beginning of the Table -->
                         <label>Jobs applied for:</label>
 			<table id="job_list" class="tablesorter">
@@ -123,21 +123,21 @@ $(document).ready(function()
                           <td id="0">{{  row[0]  }}</td>
                           <td id="1">{{  row[1]  }}</td>
                           {% if row[4] %}
-                          <td id="2"><a href="/descriptions/desc{{row[3]}}.txt">{{  row[2]  }}</a></td>
+                          <td id="2"><a href="/uploads/desc{{row[3]}}.txt">{{  row[2]  }}</a></td>
                           {% else %}
                           <td id="2">{{  row[2]  }}</a></td>
                           {% endif %}
                           {% if row[5] %}
-                          <td id="3"><img src="/static/images/logo{{row[6]}}.jpg"/></td>
+                          <td id="3"><img src="/uploads/logo{{row[6]}}.jpg"/></td>
                           {% else %}
                           <td id="3">N/A</td>
                           {% endif %}
-                      </tr>    
+                      </tr>
                     {% endfor %}
                     </tbody>
                 </table>
                 <!--End of the Table -->
-                
+
 				{% with messages = get_flashed_messages(with_categories=true) %}
 				  {% if messages %}
 					<ul class=flashes>
@@ -147,20 +147,20 @@ $(document).ready(function()
 					</ul>
 				  {% endif %}
 				{% endwith %}
-            
-            
+
+
         </div>
         <div id="body-bottom_list"></div>
   </div>
 <!-- END BODY -->
-    
+
 <!-- BEGIN FOOTER -->
   <div id="footer">
     <div id="foot-lcolumn">
-      <a href="http://www.fsu.edu/">FSU Home</a> | 
-      <a href="http://www.fsu.edu/misc/comments.shtml">Comments</a> | 
-      <a href="http://www.fsu.edu/misc/policy.html">Privacy Policy</a> | 
-      <a href="http://www.fsu.edu/misc/copyright.shtml">Copyright</a> | 
+      <a href="http://www.fsu.edu/">FSU Home</a> |
+      <a href="http://www.fsu.edu/misc/comments.shtml">Comments</a> |
+      <a href="http://www.fsu.edu/misc/policy.html">Privacy Policy</a> |
+      <a href="http://www.fsu.edu/misc/copyright.shtml">Copyright</a> |
       <a href="https://www.cs.fsu.edu/site/feedback.php?referrer=/current/">Comment or Report a Problem</a>
       </div>
     <div id="foot-rcolumn"><a href="#top">top</a>

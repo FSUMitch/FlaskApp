@@ -15,7 +15,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 
 <body onload="preloadImages();">
 <div id="main">
-	 
+
 
 <!-- BEGIN HEADER -->
 <script type="text/javascript" src="/static/script/preload.js"></script>
@@ -27,11 +27,11 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   </div>
   <div id="minilinks">
 	<a href="https://www.cs.fsu.edu/site/help.php">Help</a>
-     | <a href="https://www.cs.fsu.edu/admin/login.php">Login</a> 
+     | <a href="https://www.cs.fsu.edu/admin/login.php">Login</a>
    	 | <a href="https://www.cs.fsu.edu/site/contact.php">Contact</a>
      | <a href="https://www.cs.fsu.edu/site/sitemap.php">Site Map</a>
   </div>
-</div> 
+</div>
 
 <h1><img src="/static/images/cs.gif" width="760" height="50" alt="FSU Computer Science" /></h1>
 <!-- END HEADER -->
@@ -40,7 +40,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 
   <div id="linksLeft">
      <div>
-        <a href="/SICP">Home</a> &gt; 
+        <a href="/SICP">Home</a> &gt;
 		<a href="/Employer/Home">Employers</a> &gt;
         <a href="/Employer/ViewInternships">View Internships</a> &gt;
     </div>
@@ -53,33 +53,27 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   <div id="mainnav">
 <ul>
   <li>
-    <a href="http://www.cs.fsu.edu/prospective/" onmouseover="changeImages('prospective_link', 'prospective_link-over.gif'); return true;" onmouseout="changeImages('prospective_link', 'prospective_link.gif'); return true;">
-      <img border="0" name="prospective_link" src="/static/images/prospective_link.gif" alt="Prospective Students"/>
+    <a href="http://www.cs.fsu.edu/prospective/"><img border="0" name="prospective_link" src="/static/images/prospective_link.gif" alt="Prospective Students"/>
     </a>
   </li>
   <li>
-    <a href="http://www.cs.fsu.edu/current/" onmouseover="changeImages('current_link', 'current_link-over.gif'); return true;" onmouseout="changeImages('current_link', 'current_link.gif'); return true;">
-      <img border="0" name="current_link" src="/static/images/current_link.gif" alt="Current Students"/>
+    <a href="http://www.cs.fsu.edu/current/"><img border="0" name="current_link" src="/static/images/current_link.gif" alt="Current Students"/>
     </a>
   </li>
   <li>
-    <a href="http://www.cs.fsu.edu/faculty/" onmouseover="changeImages('faculty_link', 'faculty_link-over.gif'); return true;" onmouseout="changeImages('faculty_link', 'faculty_link.gif'); return true;">
-      <img border="0" name="faculty_link" src="/static/images/faculty_link.gif" alt="People"/>
+    <a href="http://www.cs.fsu.edu/faculty/"><img border="0" name="faculty_link" src="/static/images/faculty_link.gif" alt="People"/>
     </a>
   </li>
   <li>
-    <a href="http://www.cs.fsu.edu/research/" onmouseover="changeImages('research_link', 'research_link-over.gif'); return true;" onmouseout="changeImages('research_link', 'research_link.gif'); return true;">
-      <img border="0" name="research_link" src="/static/images/research_link.gif" alt="Research"/>
+    <a href="http://www.cs.fsu.edu/research/"><img border="0" name="research_link" src="/static/images/research_link.gif" alt="Research"/>
     </a>
   </li>
   <li>
-    <a href="http://www.cs.fsu.edu/faculty/alumni/" onmouseover="changeImages('alumni_link', 'alumni_link-over.gif'); return true;" onmouseout="changeImages('alumni_link', 'alumni_link.gif'); return true;">
-      <img border="0" name="alumni_link" src="/static/images/alumni_link.gif" alt="Alumni"/>
+    <a href="http://www.cs.fsu.edu/faculty/alumni/"><img border="0" name="alumni_link" src="/static/images/alumni_link.gif" alt="Alumni"/>
     </a>
   </li>
   <li>
-    <a href="http://www.cs.fsu.edu/resources/" onmouseover="changeImages('resources_link', 'resources_link-over.gif'); return true;" onmouseout="changeImages('resources_link', 'resources_link.gif'); return true;">
-      <img border="0" name="resources_link" src="/static/images/resources_link.gif" alt="Resources &amp; Forms"/>
+    <a href="http://www.cs.fsu.edu/resources/"><img border="0" name="resources_link" src="/static/images/resources_link.gif" alt="Resources &amp; Forms"/>
     </a>
   </li>
 </ul>
@@ -101,8 +95,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                     {% for student in students %}
                         <p>{{student[0]}}</p>
                         <p>{{student[3]}}</p>
-                        <a href="/uploads/resume{{student[2]}}.txt">Link to this resume</a><br />
-                        <a href="/Employer/ViewInternships?iid={{iid}}&sid={{student[2]}}">Accept</a><br />
+                        <a href="/Employer/View/{{student[2]}}">Read this resume</a><br />
                         <a href="/Employer/ViewInternships?iid={{iid}}&sid={{student[2]}}">Remove</a>
                         <br />
                     {% endfor %}
@@ -123,8 +116,8 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 		<div id="body-bottom"></div>
   </div>
 <!-- END BODY -->
-	
-    
+
+
   <!-- SIDEBAR FOR EMPLOYERS -->
 <div id="rcolumn">
 <div class="sidebar"><img src="/static/images/employeelinks.gif" width="190" height="20" alt="Employee Links"/>
@@ -140,15 +133,15 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 </div>
 </div>
 <!-- END OF SIDEBAR -->
-    
-    
+
+
 <!-- BEGIN FOOTER -->
   <div id="footer">
     <div id="foot-lcolumn">
-      <a href="http://www.fsu.edu/">FSU Home</a> | 
-      <a href="http://www.fsu.edu/misc/comments.shtml">Comments</a> | 
-      <a href="http://www.fsu.edu/misc/policy.html">Privacy Policy</a> | 
-      <a href="http://www.fsu.edu/misc/copyright.shtml">Copyright</a> | 
+      <a href="http://www.fsu.edu/">FSU Home</a> |
+      <a href="http://www.fsu.edu/misc/comments.shtml">Comments</a> |
+      <a href="http://www.fsu.edu/misc/policy.html">Privacy Policy</a> |
+      <a href="http://www.fsu.edu/misc/copyright.shtml">Copyright</a> |
       <a href="https://www.cs.fsu.edu/site/feedback.php?referrer=/current/">Comment or Report a Problem</a>
       </div>
     <div id="foot-rcolumn"><a href="#top">top</a>

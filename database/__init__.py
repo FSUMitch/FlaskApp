@@ -52,7 +52,7 @@ def create_db():
     #create tables "Companies"
     c.execute('DROP TABLE IF EXISTS {}'.format(COMPANYTNAME))
     c.execute('DROP TABLE IF EXISTS {}'.format(STUDENTTNAME))
-    c.execute('DROP TABLE IF EXISTS {}'.format(INTERNSHIPTNAME))    
+    c.execute('DROP TABLE IF EXISTS {}'.format(INTERNSHIPTNAME))
 
     c.execute('CREATE TABLE {} {}'.format(COMPANYTNAME, COMPANYTRAITS))
     c.execute('CREATE TABLE {} {}'.format(STUDENTTNAME, STUDENTTRAITS))
@@ -70,18 +70,18 @@ def add_company(name, password, email):
     conn = sqlite3.connect(DBNAME)
     c = conn.cursor()
 
-    #get length    
+    #get length
     c.execute('SELECT name FROM {}'.format(COMPANYTNAME))
 
     ctnum = len(c.fetchall())
-    
+
     #encrypt/encode text
     cipher = AES.new(SECRET)
     encoded = encodeAES(cipher, password)
 
     c.execute("INSERT INTO {} values {}".format(COMPANYTNAME, COMPANYPARAMS),
               (name, encoded, ctnum, 1, email))
-    
+
     conn.commit()
     conn.close()
 
@@ -94,11 +94,11 @@ def company_login(email, password):
     cipher = AES.new(SECRET)
 
     c.execute('SELECT password FROM {} WHERE email = ?'.format(COMPANYTNAME),(email,))
-    
+
     data = c.fetchone()
     if data is None:
         return False
-    else:  
+    else:
         encoded = encodeAES(cipher, password)
         if data[0] == encoded:
             return True
@@ -112,7 +112,7 @@ def add_student(name, password, email):
     conn = sqlite3.connect(DBNAME)
     c = conn.cursor()
 
-    #get length    
+    #get length
     c.execute('SELECT name FROM {}'.format(STUDENTTNAME))
 
     ctnum = len(c.fetchall())
@@ -124,10 +124,10 @@ def add_student(name, password, email):
     internstring = "" #string will contain 0 for each entry in internship table
     for r in view_internship_t():
         internstring += '0'
-    
+
     c.execute("INSERT INTO {} values {}".format(STUDENTTNAME, STUDENTPARAMS),
               (name, encoded, ctnum, email, internstring))
-    
+
     conn.commit()
     conn.close()
 
@@ -157,7 +157,7 @@ def add_internship(email, posname):
     conn = sqlite3.connect(DBNAME)
     c = conn.cursor()
 
-    #get length    
+    #get length
     c.execute('SELECT name FROM {}'.format(INTERNSHIPTNAME))
     ctnum = len(c.fetchall())
 
@@ -170,7 +170,7 @@ def add_internship(email, posname):
     #update each student's intarray with an appended 0
     for r in view_student_t():
         c.execute("UPDATE {} SET intarray='{}' WHERE sid='{}'".format(STUDENTTNAME, str(r[4]) + u"0", r[2]))
-        
+
     conn.commit()
     conn.close()
 
@@ -183,7 +183,7 @@ def get_cid(email):
     c.execute("SELECT cid FROM {} where email is '{}'".format(COMPANYTNAME, email))
     data = c.fetchone()
     cid = data[0]
-    
+
     conn.commit()
     conn.close()
 
@@ -196,7 +196,7 @@ def get_sid(email):
     c.execute("SELECT sid FROM {} where email is '{}'".format(STUDENTTNAME, email))
     data = c.fetchone()
     cid = data[0]
-    
+
     conn.commit()
     conn.close()
 
@@ -205,8 +205,8 @@ def get_sid(email):
 def get_cemail(iid):
     conn = sqlite3.connect(DBNAME)
     c = conn.cursor()
-    
-    c.execute('SELECT email FROM {} as C JOIN {} as I ON C.cid = I.cid'.format(COMPANYTNAME, INTERNSHIPTNAME))
+
+    c.execute('SELECT email FROM {} as C JOIN {} as I ON C.cid = I.cid WHERE I.iid={}'.format(COMPANYTNAME, INTERNSHIPTNAME, iid))
     data = c.fetchone()
 
     conn.commit()
@@ -217,13 +217,13 @@ def get_cemail(iid):
 def check_ci_ids(cid, iid):
     conn = sqlite3.connect(DBNAME)
     c = conn.cursor()
-    
+
     c.execute("SELECT cid FROM {} WHERE iid={}".format(INTERNSHIPTNAME, iid))
     data = c.fetchone()
 
     conn.commit()
     conn.close()
-    
+
     if data[0] == cid:
         return True
     else:
@@ -239,7 +239,7 @@ def get_name(sid = None, iid=None):
         sname = data[0]
     except:
         pass
-    
+
     try:
         c.execute("SELECT name FROM {} WHERE iid={}".format(INTERNSHIPTNAME, iid))
         data = c.fetchone()
@@ -255,7 +255,7 @@ def get_name(sid = None, iid=None):
 def apply_student(email, iid):
     """Applies student, works directly with database"""
     iid = int(iid)
-    
+
     conn = sqlite3.connect(DBNAME)
     c = conn.cursor()
 
@@ -268,7 +268,7 @@ def apply_student(email, iid):
         arr[0]
     except:
         arr = str(arr)
-        
+
     if arr[iid] == '0':
         arr = str(arr[0:iid] + "1" + arr[iid+1:len(arr)])
         c.execute('UPDATE {} SET intarray={} WHERE sid={}'.format(STUDENTTNAME, str(arr), sid))
@@ -276,14 +276,14 @@ def apply_student(email, iid):
         conn.commit()
         conn.close()
         return False
-    
+
     conn.commit()
     conn.close()
     return True
 
 def int_isactive(iid):
     iid = int(iid)
-    
+
     conn = sqlite3.connect(DBNAME)
     c = conn.cursor()
 
@@ -294,7 +294,7 @@ def int_isactive(iid):
 
 def int_makeinactive(iid):
     iid = int(iid)
-    
+
     conn = sqlite3.connect(DBNAME)
     c = conn.cursor()
     c.execute('UPDATE {} SET active=0, name="", iid=-1, WHERE iid={}'.format(INTERNSHIPTNAME, iid))
@@ -350,7 +350,7 @@ def view_company_t():
 
     for e in c.execute('SELECT * FROM {}'.format(COMPANYTNAME)):
         yield e
-        
+
     conn.commit()
     conn.close()
 
